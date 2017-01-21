@@ -28,8 +28,12 @@ def test_karatsuba_big_integers():
     expected = 8539734222673567065463550869546574495034888535765114961879601127067743044893204848617875072216249073013374895871952806582723184 # pylint: disable=locally-disabled, line-too-long
     assert karatsuba.multiply(x, y) == expected
 
+def test_karatsuba_different_size():
+    """Test Karatsuba Multiplication Different Size Integers"""
+    assert karatsuba.multiply(1234567, 890) == 1098764630
+
 def test_karatsuba_zero():
-    """Test Karatsuba Multiplication Negative Integers"""
+    """Test Karatsuba Multiplication Zero Integer"""
     assert karatsuba.multiply(0, 1234567890) == 0
 
 def test_karatsuba_negative_integer():
