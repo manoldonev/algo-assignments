@@ -13,6 +13,8 @@ def multiply(x, y):
     3. Compute recursively (a + b)*(c + d) = a*c + b*c + a*d +b*d
     3) - 1) - 2) = a*d + b*c
     """
+    if x < 0 or y < 0:
+        raise ValueError("Negative integers not supported")
 
     if x < 10 or y < 10:
         return x * y
