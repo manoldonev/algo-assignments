@@ -4,7 +4,7 @@
 
 import math
 
-def karatsuba(x, y):
+def multiply(x, y):
     """
     x = 10^(n/2)*a + b, y = 10^(n/2)*c + d where a, b, c, d are n/2 digit numbers
     x*y = 10^(n)*a*c + 10^(n/2)*(a*d + b*c) + b*d
@@ -25,11 +25,8 @@ def karatsuba(x, y):
     c = y // 10**(nby2)
     d = y % 10**(nby2)
 
-    a_c = karatsuba(a, c)
-    b_d = karatsuba(b, d)
-    a_d_plus_b_c = karatsuba(a + b, c + d) - a_c - b_d
+    a_c = multiply(a, c)
+    b_d = multiply(b, d)
+    a_d_plus_b_c = multiply(a + b, c + d) - a_c - b_d
 
     return 10**(2 * nby2) * a_c + 10**nby2 * a_d_plus_b_c + b_d
-
-print '{0:d}'.format(karatsuba(3141592653589793238462643383279502884197169399375105820974944592, \
-2718281828459045235360287471352662497757247093699959574966967627))
