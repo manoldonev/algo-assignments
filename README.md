@@ -1,1 +1,1 @@
-# algo1-karatsuba-multiplication
+# algo1-assignments
