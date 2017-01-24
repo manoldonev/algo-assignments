@@ -12,4 +12,4 @@ from week2 import countInversions
 
 lines = [int(line) for line in open("tests/week2_integer_array.txt")]
 [sorted, inversions] = countInversions.sort_and_count(lines)
-print sorted
+print inversions
