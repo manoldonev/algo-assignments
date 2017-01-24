@@ -40,5 +40,3 @@ def merge_and_count(left, right):
         merged.extend(left[i:])
 
     return [merged, split_inversions]
-
-print sort_and_count([2, 1])
