@@ -1,4 +1,3 @@
-#!/usr/bin/python
 
 """Week1 Test Cases"""
 
