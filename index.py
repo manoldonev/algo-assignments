@@ -8,8 +8,14 @@
 # y = 2718281828459045235360287471352662497757247093699959574966967627
 # print '{0:d}'.format(karatsuba.multiply(x, y))
 
-from week2 import countInversions
+# from week2 import countInversions
 
-lines = [int(line) for line in open("tests/week2_integer_array.txt")]
-[sorted, inversions] = countInversions.sort_and_count(lines)
-print inversions
+# lines = [int(line) for line in open("tests/week2_integer_array.txt")]
+# [sorted, inversions] = countInversions.sort_and_count(lines)
+# print inversions
+
+from week3 import countComparisons
+
+lines = [int(line) for line in open("tests/week3_quicksort.txt")]
+sorted, comparisons = countComparisons.sort_and_count(lines)
+print comparisons
