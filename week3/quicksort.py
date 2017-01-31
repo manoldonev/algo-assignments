@@ -54,5 +54,3 @@ def swap(array, i, j):
     temp = array[i]
     array[i] = array[j]
     array[j] = temp
-
-print(sort([2,1]))
