@@ -5,11 +5,11 @@ from random import randint
 
 def sort(array):
     """Quicksort public method"""
-    __sort(array, 0, len(array) - 1)
+    _sort(array, 0, len(array) - 1)
 
     return array
 
-def __sort(array, l, r):
+def _sort(array, l, r):
     """Divide and conquer step"""
 
     if r <= l:
@@ -17,8 +17,8 @@ def __sort(array, l, r):
 
     pivot_index = partition(array, l, r)
 
-    __sort(array, l, pivot_index - 1)
-    __sort(array, pivot_index + 1, r)
+    _sort(array, l, pivot_index - 1)
+    _sort(array, pivot_index + 1, r)
 
 def choose_pivot(array, l, r):
     """Choose pivot"""
