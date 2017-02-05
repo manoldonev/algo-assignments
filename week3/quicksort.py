@@ -3,11 +3,13 @@
 
 from random import randint
 
+
 def sort(array):
     """Quicksort public method"""
     _sort(array, 0, len(array) - 1)
 
     return array
+
 
 def _sort(array, l, r):
     """Divide and conquer step"""
@@ -20,6 +22,7 @@ def _sort(array, l, r):
     _sort(array, l, pivot_index - 1)
     _sort(array, pivot_index + 1, r)
 
+
 def choose_pivot(array, l, r):
     """Choose pivot"""
 
@@ -30,6 +33,7 @@ def choose_pivot(array, l, r):
     swap(array, l, pivot_index)
 
     return l
+
 
 def partition(array, l, r):
     """Partition around pivot"""
@@ -48,6 +52,7 @@ def partition(array, l, r):
     swap(array, l, i - 1)
 
     return i - 1
+
 
 def swap(array, i, j):
     """Swap routine"""

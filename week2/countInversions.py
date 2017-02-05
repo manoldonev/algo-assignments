@@ -1,6 +1,7 @@
 
 """ Count Inversions (Extended Mergesort Algorithm) """
 
+
 def sort_and_count(array):
     """Divide & Conquer Step"""
     n = len(array)
@@ -15,6 +16,7 @@ def sort_and_count(array):
     [merged, split_inversions] = merge_and_count(sorted_left, sorted_right)
 
     return [merged, left_inversions + right_inversions + split_inversions]
+
 
 def merge_and_count(left, right):
     """Combine Step"""

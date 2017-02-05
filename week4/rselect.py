@@ -3,9 +3,11 @@
 
 from random import randint
 
+
 def rselect(array, i):
     """Rselect public method"""
     return _rselect(array, 0, len(array) - 1, i)
+
 
 def _rselect(array, l, r, i):
     """Divide and conquer step"""
@@ -21,6 +23,7 @@ def _rselect(array, l, r, i):
         return _rselect(array, l, pivot_index - 1, i)
     else:
         return _rselect(array, pivot_index + 1, r, i)
+
 
 def partition(array, l, r):
     """Partition around pivot"""
@@ -40,6 +43,7 @@ def partition(array, l, r):
 
     return i - 1
 
+
 def choose_pivot(array, l, r):
     """Choose pivot"""
 
@@ -50,6 +54,7 @@ def choose_pivot(array, l, r):
     swap(array, l, pivot_index)
 
     return l
+
 
 def swap(array, i, j):
     """Swap routine"""

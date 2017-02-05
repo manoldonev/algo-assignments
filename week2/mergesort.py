@@ -1,6 +1,7 @@
 
 """ Mergesort Implementation """
 
+
 def sort(array):
     """Divide & Conquer Step"""
     n = len(array)
@@ -13,6 +14,7 @@ def sort(array):
     sorted_right = sort(array[nby2:])
 
     return merge(sorted_left, sorted_right)
+
 
 def merge(left, right):
     """Combine Step"""

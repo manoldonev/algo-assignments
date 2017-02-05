@@ -1,12 +1,14 @@
 
 """Quicksort Implementation"""
 
+
 def sort_and_count(array):
     """Quicksort public method"""
 
     comparisons = _sort_and_count(array, 0, len(array) - 1)
 
     return array, comparisons
+
 
 def _sort_and_count(array, l, r):
     """Divide and conquer step"""
@@ -20,6 +22,7 @@ def _sort_and_count(array, l, r):
     comparisions_right = _sort_and_count(array, pivot_index + 1, r)
 
     return r - l + comparisons_left + comparisions_right
+
 
 def partition(array, l, r):
     """Partition around pivot"""
@@ -39,16 +42,19 @@ def partition(array, l, r):
 
     return i - 1
 
+
 def choose_pivot_first(array, l, r):
     """Choose first element as pivot"""
 
     return l
+
 
 def choose_pivot_last(array, l, r):
     """Choose last element as pivot"""
 
     swap(array, l, r)
     return l
+
 
 def choose_pivot_median(array, l, r):
     """Choose median element as pivot"""
@@ -68,6 +74,7 @@ def choose_pivot_median(array, l, r):
 
     return l
 
+
 def find_median(a, b, c):
     """Find median of three elements"""
     x = a - b
@@ -81,6 +88,7 @@ def find_median(a, b, c):
         return c
 
     return a
+
 
 def swap(array, i, j):
     """Swap routine"""
