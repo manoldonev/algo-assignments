@@ -14,8 +14,31 @@
 # [sorted, inversions] = countInversions.sort_and_count(lines)
 # print inversions
 
-from week3 import countComparisons
+# from week3 import countComparisons
 
-lines = [int(line) for line in open("tests/week3_quicksort.txt")]
-sorted, comparisons = countComparisons.sort_and_count(lines)
-print comparisons
+# lines = [int(line) for line in open("tests/week3_quicksort.txt")]
+# sorted, comparisons = countComparisons.sort_and_count(lines)
+# print comparisons
+
+import math
+from week4.mincut import min_cut
+
+graph = {}
+for line in open("tests/week4_kargerMinCut.txt"):
+    tokens = line.split()
+    graph[tokens[0]] = tokens[1:]
+
+n = len(graph)
+trials = math.ceil(n * n * math.log(n))
+
+result = n
+while trials > 0:
+    cut = min_cut(graph)
+    min_cut_candidate = len(cut[cut.keys()[0]])
+
+    if min_cut_candidate < result:
+        result = min_cut_candidate
+
+    trials -= 1
+
+print result
