@@ -3,7 +3,7 @@
 
 
 def dfs_recursive(graph, start, path=None):
-    """Depth-First Seach (Recursive)"""
+    """Depth-First Search (Recursive)"""
     if path is None:
         path = []
 
