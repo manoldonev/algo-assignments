@@ -1,33 +1,33 @@
 
 """Topological Sort Package"""
 
+from collections import deque
+
+
+class Tracker(object):
+
+    def __init__(self):
+        self.explored = set()
+        self.sort_order = deque()
+
 
 def topological_sort(graph):
     """Topological Sort"""
-    explored = []
-    sort_order = []
+    tracker = Tracker()
 
-    for node in graph.keys():
-        if node not in explored:
-            dfs(graph, node, explored, sort_order)
+    for node in graph:
+        if node not in tracker.explored:
+            dfs(graph, node, tracker)
 
-    # nodes are sorted in reverse order
-    sort_order.reverse()
-    return sort_order
+    return tracker.sort_order
 
 
-def dfs(graph, start, explored=None, sort_order=None):
+def dfs(graph, start, tracker):
     """Depth-First Search (Recursive)"""
-    if explored is None:
-        explored = []
-
-    if sort_order is None:
-        sort_order = []
-
-    explored.append(start)
+    tracker.explored.add(start)
 
     for node in graph[start]:
-        if node not in explored:
-            dfs(graph, node, explored, sort_order)
+        if node not in tracker.explored:
+            dfs(graph, node, tracker)
 
-    sort_order.append(start)
+    tracker.sort_order.appendleft(start)

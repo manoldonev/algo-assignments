@@ -6,7 +6,7 @@ from collections import deque
 
 def shortest_paths(graph, start):
     """Shortest Path"""
-    path = [start]
+    explored = set([start])
     queue = deque([start])
     dist = {start: 0}
 
@@ -16,8 +16,8 @@ def shortest_paths(graph, start):
         # TODO: Can this be done with queue.extend(...) + inline
         # generator/yield?
         for node in graph[vertex]:
-            if node not in path:
-                path.append(node)
+            if node not in explored:
+                explored.add(node)
                 queue.append(node)
                 dist[node] = dist[vertex] + 1
 
