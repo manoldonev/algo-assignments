@@ -5,13 +5,11 @@ import sys
 
 
 def dijkstra(graph, source):
-    """Dijkstra's Shortest Paths Algorithm (Naive) - O(mn) Complexity"""
+    """Dijkstra's Shortest Paths Algorithm (Naive) - O(m*n) Complexity"""
     explored = set([source])
-    shortest_paths = {
-        source: 0
-    }
-
+    shortest_paths = {source: 0}
     n = len(graph)
+
     while n > 1:
         min_key = None
         min_value = sys.maxint
