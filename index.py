@@ -4,11 +4,14 @@
 
 import sys
 import resource
+import random
 from collections import defaultdict
 from week1.scc import scc
 from week2.dijkstra_naive import dijkstra
 from week2.dijkstra_heapq import dijkstra as dijkstra_heapq
 from week3.medianMaintenance import median
+from week4.twoSumProblem import two_sum
+
 
 # # set rescursion limit and stack size limit
 # sys.setrecursionlimit(10 ** 6)
@@ -45,14 +48,21 @@ from week3.medianMaintenance import median
 #     return ",".join(test_cases)
 
 
+# def main():
+#     with open("tests/week3_median.txt") as handle:
+#         numbers = [int(line) for line in handle]
+
+#         calculated_medians = list(median(numbers))
+#         result = sum(calculated_medians)
+
+#         return result % 10000
+
+
 def main():
-    with open("tests/week3_median.txt") as handle:
+    with open("tests/week4_prob-2sum.txt") as handle:
         numbers = [int(line) for line in handle]
+        return two_sum(numbers)
 
-        calculated_medians = list(median(numbers))
-        result = sum(calculated_medians)
-
-        return result % 10000
 
 if __name__ == '__main__':
     print main()
