@@ -22,5 +22,5 @@ def two_sum(numbers, delta=10000):
 def two_sum_generator(hash_table, target):
     """2-Sum Problem in [-delta, delta] (hash version)"""
     for x in hash_table:
-        if target - x in hash_table and 2 *x != target:
+        if target - x in hash_table and 2 * x != target:
             yield (x, target - x)
