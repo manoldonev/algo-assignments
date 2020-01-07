@@ -62,10 +62,8 @@ def choose_pivot_median(array, l, r):
     first = array[l]
     last = array[r]
 
-    n = r - l + 1
-
-    middle_index = n / 2 + n % 2 - 1
-    middle = array[l + middle_index]
+    middle_index = l + (r - l) // 2;
+    middle = array[middle_index]
 
     median = find_median(first, middle, last)
     median_index = array.index(median)
