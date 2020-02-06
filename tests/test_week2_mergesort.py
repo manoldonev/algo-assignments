@@ -1,6 +1,6 @@
 """Week2 Test Cases: Mergesort"""
 
-from week2.mergesort import sort as mergesort
+from week2 import sort as mergesort
 
 
 def test_mergesort_empty():

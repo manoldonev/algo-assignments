@@ -1,6 +1,6 @@
 """Week3 Test Cases: Quicksort"""
 
-from week3.quicksort import sort as randomized_quicksort
+from week3 import sort as randomized_quicksort
 
 
 def test_quicksort_empty():

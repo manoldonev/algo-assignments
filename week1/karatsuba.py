@@ -7,6 +7,7 @@ import math
 def multiply(x, y):
     """
     x = 10^(n/2)*a + b, y = 10^(n/2)*c + d where a, b, c, d are n/2 digit numbers
+
     x*y = 10^(n)*a*c + 10^(n/2)*(a*d + b*c) + b*d
     1. Compute recursively a*c
     2. Compute recursively b*d
@@ -20,7 +21,7 @@ def multiply(x, y):
         return x * y
 
     n = max(int(math.log10(x)), int(math.log10(y))) + 1
-    nby2 = n / 2
+    nby2 = n // 2
 
     a = x // 10**(nby2)
     b = x % 10**(nby2)

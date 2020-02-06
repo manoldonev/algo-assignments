@@ -4,8 +4,9 @@
 
 def sort(array):
     """Divide & Conquer Step"""
+
     n = len(array)
-    nby2 = n / 2
+    nby2 = n // 2
 
     if n <= 1:
         return array
@@ -18,6 +19,7 @@ def sort(array):
 
 def merge(left, right):
     """Combine Step"""
+
     n_left = len(left)
     n_right = len(right)
     i = 0

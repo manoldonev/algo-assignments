@@ -1,12 +1,12 @@
 """Week4 Test Cases: Karger's Min Cut"""
 
 import math
-from week4.mincut import min_cut
+from week4 import min_cut
 
 
 def test_mincut():
     graph = {
-        1: [2, 3],
+        1: [2, 3, 4],
         2: [1, 4, 5],
         3: [1, 4],
         4: [1, 2, 3, 5],
@@ -19,9 +19,7 @@ def test_mincut():
     result = n
     while trials > 0:
         cut = min_cut(graph)
-        min_cut_candidate = len(cut[cut.keys()[0]])
-
-        print min_cut_candidate
+        min_cut_candidate = len(cut[list(cut.keys())[0]])
 
         if min_cut_candidate < result:
             result = min_cut_candidate

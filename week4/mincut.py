@@ -2,10 +2,12 @@
 """Karger's Min Cut Algorithm Implementation"""
 
 from random import randint
+from copy import deepcopy
 
 
 def min_cut(g):
     """Min Cut Public Method"""
+    g = deepcopy(g)
     n = len(g)
 
     while n > 2:
@@ -19,7 +21,7 @@ def min_cut(g):
 
 def choose_edge(g, n):
     """Choose edge (u, v) uniformly at random"""
-    u = g.keys()[randint(0, n - 1)]
+    u = list(g.keys())[randint(0, n - 1)]
     u_edge_list = g[u]
     v = u_edge_list[randint(0, len(u_edge_list) - 1)]
 
@@ -42,7 +44,7 @@ def contract(g, u, v):
     for element in g[v]:
         element_list = g[element]
 
-        for i in range(0, len(element_list)):
+        for i, _ in enumerate(element_list):
             if element_list[i] == v:
                 element_list[i] = u
 

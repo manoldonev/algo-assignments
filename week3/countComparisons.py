@@ -43,7 +43,7 @@ def partition(array, l, r):
     return i - 1
 
 
-def choose_pivot_first(array, l, r):
+def choose_pivot_first(_, l, __):
     """Choose first element as pivot"""
 
     return l
@@ -62,7 +62,7 @@ def choose_pivot_median(array, l, r):
     first = array[l]
     last = array[r]
 
-    middle_index = l + (r - l) // 2;
+    middle_index = l + (r - l) // 2
     middle = array[middle_index]
 
     median = find_median(first, middle, last)

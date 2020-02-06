@@ -1,6 +1,6 @@
 """Week4 Test Cases: Randomized Selection"""
 
-from week4.rselect import rselect
+from week4 import rselect
 
 
 def test_rselect_basic():

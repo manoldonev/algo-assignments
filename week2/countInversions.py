@@ -5,7 +5,7 @@
 def sort_and_count(array):
     """Divide & Conquer Step"""
     n = len(array)
-    nby2 = n / 2
+    nby2 = n // 2
 
     if n <= 1:
         return [array, 0]
