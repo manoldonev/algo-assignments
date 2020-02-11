@@ -10,23 +10,29 @@ print('{0:d}'.format(karatsuba.multiply(x, y)))
 
 # from week2 import countInversions
 
-# lines = [int(line) for line in open("tests/week2_integer_array.txt")]
-# [_, inversions] = countInversions.sort_and_count(lines)
+# with open("tests/week2_integer_array.txt") as file_handle:
+#     lines = [int(line) for line in file_handle]
+
+# _, inversions = countInversions.sort_and_count(lines)
 # print(inversions)
 
 # from week3 import countComparisons
 
-# lines = [int(line) for line in open("tests/week3_quicksort.txt")]
-# sorted, comparisons = countComparisons.sort_and_count(lines)
-# print comparisons
+# with open("tests/week3_quicksort.txt") as file_handle:
+#     lines = [int(line) for line in file_handle]
+
+# _, comparisons = countComparisons.sort_and_count(lines)
+# print(comparisons)
 
 # import math
 # from week4 import min_cut
 
 # graph = {}
-# for line in open("tests/week4_kargerMinCut.txt"):
-#     tokens = line.split()
-#     graph[tokens[0]] = tokens[1:]
+
+# with open("tests/week4_kargerMinCut.txt") as file_handle:
+#     for line in file_handle:
+#         tokens = line.split()
+#         graph[tokens[0]] = tokens[1:]
 
 # n = len(graph)
 # trials = math.ceil(n * n * math.log(n))

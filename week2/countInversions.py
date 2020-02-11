@@ -8,14 +8,14 @@ def sort_and_count(array):
     nby2 = n // 2
 
     if n <= 1:
-        return [array, 0]
+        return array, 0
 
-    [sorted_left, left_inversions] = sort_and_count(array[:nby2])
-    [sorted_right, right_inversions] = sort_and_count(array[nby2:])
+    sorted_left, left_inversions = sort_and_count(array[:nby2])
+    sorted_right, right_inversions = sort_and_count(array[nby2:])
 
-    [merged, split_inversions] = merge_and_count(sorted_left, sorted_right)
+    merged, split_inversions = merge_and_count(sorted_left, sorted_right)
 
-    return [merged, left_inversions + right_inversions + split_inversions]
+    return merged, left_inversions + right_inversions + split_inversions
 
 
 def merge_and_count(left, right):
@@ -41,4 +41,4 @@ def merge_and_count(left, right):
     elif j == n_right:
         merged.extend(left[i:])
 
-    return [merged, split_inversions]
+    return merged, split_inversions
