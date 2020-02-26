@@ -15,6 +15,7 @@ def test_dijkstra_naive():
 
     assert dijkstra_naive(graph, 'a') == {'a': 0, 'c': 3, 'b': 1, 'd': 6}
 
+
 def test_dijkstra_heapq():
     graph = {
         'a': [['b', 1], ['c', 4]],

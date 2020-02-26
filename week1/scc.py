@@ -23,7 +23,7 @@ def scc(graph):
     graph_reversed = reverse_graph(graph)
 
     tracker1 = Tracker()
-    dfs_loop(graph_reversed, graph_reversed.keys(), tracker1)
+    dfs_loop(graph_reversed, list(graph_reversed.keys()), tracker1)
 
     tracker2 = Tracker()
     dfs_loop(graph, tracker1.finish_times_reversed, tracker2)
@@ -55,8 +55,8 @@ def reverse_graph(graph):
     """Reverse edges in a directed graph"""
     reversed_graph = defaultdict(list)
 
-    for tail, head_list in graph.iteritems():
-        if not head_list and not reversed_graph.has_key(tail):
+    for tail, head_list in graph.items():
+        if not head_list and tail not in reversed_graph:
             reversed_graph[tail] = []
             continue
 

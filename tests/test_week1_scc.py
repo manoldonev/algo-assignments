@@ -17,7 +17,7 @@ def test_scc():
         'i': ['g']
     }
 
-    assert scc(graph) == {'a': ['a', 'c', 'b'], 'd': [
+    assert scc(graph) == {'c': ['c', 'b', 'a'], 'd': [
         'd', 'f', 'e'], 'g': ['g', 'h', 'i']}
 
 
@@ -34,8 +34,8 @@ def test_scc_reversed_graph():
         'i': ['h']
     }
 
-    assert scc(graph) == {'a': ['a', 'b', 'c'], 'e': [
-        'e', 'f', 'd'], 'g': ['g', 'i', 'h']}
+    assert scc(graph) == {'g': ['g', 'i', 'h'], 'd': [
+        'd', 'e', 'f'], 'b': ['b', 'c', 'a']}
 
 
 def test_scc_node_no_outbound_edges():
@@ -51,8 +51,8 @@ def test_scc_node_no_outbound_edges():
         'i': []
     }
 
-    assert scc(graph) == {'i': ['i'], 'h': ['h'], 'e': [
-        'e', 'f', 'd'], 'a': ['a', 'b', 'c'], 'g': ['g']}
+    assert scc(graph) == {'i': ['i'], 'g': ['g'], 'h': [
+        'h'], 'd': ['d', 'e', 'f'], 'b': ['b', 'c', 'a']}
 
 
 def test_scc_no_edges():

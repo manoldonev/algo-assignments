@@ -12,7 +12,6 @@ from week2.dijkstra_heapq import dijkstra as dijkstra_heapq
 from week3.medianMaintenance import median
 from week4.twoSumProblem import two_sum
 
-
 # # set rescursion limit and stack size limit
 # sys.setrecursionlimit(10 ** 6)
 # resource.setrlimit(resource.RLIMIT_STACK, (2 ** 29, 2 ** 30))
@@ -58,11 +57,26 @@ from week4.twoSumProblem import two_sum
 #         return result % 10000
 
 
+# def main():
+#     with open("tests/week4_prob-2sum.txt") as handle:
+#         numbers = [int(line) for line in handle]
+#         return two_sum(numbers)
+
 def main():
-    with open("tests/week4_prob-2sum.txt") as handle:
-        numbers = [int(line) for line in handle]
-        return two_sum(numbers)
+    graph = {
+        'a': ['b'],
+        'b': ['c', 'd'],
+        'c': ['a'],
+        'd': ['e'],
+        'e': ['f', 'g'],
+        'f': ['d'],
+        'g': ['i'],
+        'h': ['g'],
+        'i': []
+    }
+
+    print(scc(graph))
 
 
 if __name__ == '__main__':
-    print main()
+    print(main())

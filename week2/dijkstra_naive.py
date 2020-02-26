@@ -12,7 +12,7 @@ def dijkstra(graph, source):
 
     while n > 1:
         min_key = None
-        min_value = sys.maxint
+        min_value = sys.maxsize
 
         for tail in explored:
             for head in graph[tail]:

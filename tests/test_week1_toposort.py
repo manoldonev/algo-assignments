@@ -43,4 +43,4 @@ def test_topological_sort_not_connected():
     }
 
     assert topological_sort(graph) == deque(
-        ['s', 'w', 'v', 't', 1, 3, 6, 5, 4, 7])
+        [1, 3, 6, 5, 4, 7, 's', 'w', 'v', 't'])

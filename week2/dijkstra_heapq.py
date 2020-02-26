@@ -79,8 +79,8 @@ def dijkstra(graph, source):
 
 def initialize_heap(graph, source):
     """Initialize Min-Heap"""
-    dijkstra_criterion = {key: sys.maxint for key in graph}
+    dijkstra_criterion = {key: sys.maxsize for key in graph}
     for node in graph[source]:
         dijkstra_criterion[node[0]] = node[1]
 
-    return PriorityQueue(list([value, key] for key, value in dijkstra_criterion.iteritems()))
+    return PriorityQueue(list([value, key] for key, value in dijkstra_criterion.items()))

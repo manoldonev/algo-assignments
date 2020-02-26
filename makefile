@@ -1,7 +1,7 @@
 clean-pyc:
-	find . -name '*.pyc' -exec rm --force {} +
-	find . -name '*.pyo' -exec rm --force {} +
-	find . -name '*~' -exec rm --force  {} +
+	find . -name '*.pyc' -delete
+	find . -name '*.pyo' -delete
+	find . -name '*~' -delete
 
 test: clean-pyc
 	nosetests --verbose
