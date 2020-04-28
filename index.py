@@ -5,6 +5,8 @@ from week1.schedule import schedule_by_difference, schedule_by_ratio
 from week1.prim_mst import prim
 from week2.clustering import clusterize
 from week2.hamming import calculate_hamming_clusters
+from week3.huffman import make_huffman_tree, get_encoding, get_max_length, get_min_length
+from week3.mwis import calculate_maximum_weight_independent_set, reconstruct_weight_independent_set
 
 # def main():
 #     jobs = []
@@ -60,14 +62,43 @@ from week2.hamming import calculate_hamming_clusters
 #         return max_spacing
 
 
-def main():
-    numbers = []
-    with open("tests/week2_clustering_big.txt") as handle:
-        handle.readline()
-        for line in handle:
-            numbers.append(int(line.replace(" ", ""), base=2))
+# def main():
+#     numbers = []
+#     with open("tests/week2_clustering_big.txt") as handle:
+#         handle.readline()
+#         for line in handle:
+#             numbers.append(int(line.replace(" ", ""), base=2))
 
-    return calculate_hamming_clusters(numbers)
+#     return calculate_hamming_clusters(numbers)
+
+# def main():
+#     symbols = {}
+#     n = 0
+#     with open("tests/week3_huffman.txt") as handle:
+#         handle.readline()
+#         for line in handle:
+#             symbols[f"symbol{n}"] = int(line)
+#             n += 1
+
+#     huffman_tree = make_huffman_tree(symbols)
+#     encoding = get_encoding(huffman_tree)
+#     return encoding, get_max_length(encoding), get_min_length(encoding)
+
+def main():
+    with open("tests/week3_mwis.txt") as handle:
+        handle.readline()
+        graph_list = [int(line) for line in handle]
+
+    max_weights = calculate_maximum_weight_independent_set(graph_list)
+    max_weight_independent_set = reconstruct_weight_independent_set(
+        graph_list, max_weights)
+
+    # 1-based indices
+    result = ""
+    for index in [1, 2, 3, 4, 17, 117, 517, 997]:
+        result += f"{int(index - 1 in max_weight_independent_set)}"
+
+    return result
 
 
 if __name__ == '__main__':
