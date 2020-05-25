@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+import sys
+
 from collections import defaultdict
 from week1.schedule import schedule_by_difference, schedule_by_ratio
 from week1.prim_mst import prim
@@ -7,6 +9,8 @@ from week2.clustering import clusterize
 from week2.hamming import calculate_hamming_clusters
 from week3.huffman import make_huffman_tree, get_encoding, get_max_length, get_min_length
 from week3.mwis import calculate_maximum_weight_independent_set, reconstruct_weight_independent_set
+from week4.knapsack import knapsack, knapsack_recursive
+
 
 # def main():
 #     jobs = []
@@ -84,21 +88,34 @@ from week3.mwis import calculate_maximum_weight_independent_set, reconstruct_wei
 #     encoding = get_encoding(huffman_tree)
 #     return encoding, get_max_length(encoding), get_min_length(encoding)
 
+# def main():
+#     with open("tests/week3_mwis.txt") as handle:
+#         handle.readline()
+#         graph_list = [int(line) for line in handle]
+
+#     max_weights = calculate_maximum_weight_independent_set(graph_list)
+#     max_weight_independent_set = reconstruct_weight_independent_set(
+#         graph_list, max_weights)
+
+#     # 1-based indices
+#     result = ""
+#     for index in [1, 2, 3, 4, 17, 117, 517, 997]:
+#         result += f"{int(index - 1 in max_weight_independent_set)}"
+
+#     return result
+
 def main():
-    with open("tests/week3_mwis.txt") as handle:
-        handle.readline()
-        graph_list = [int(line) for line in handle]
+    sys.setrecursionlimit(10000)
 
-    max_weights = calculate_maximum_weight_independent_set(graph_list)
-    max_weight_independent_set = reconstruct_weight_independent_set(
-        graph_list, max_weights)
+    items = []
+    with open("tests/week4_knapsack_big.txt") as handle:
+        knapsack_size, _ = handle.readline().split()
+        knapsack_size = int(knapsack_size)
+        for line in handle:
+            value, weight = line.split()
+            items.append((int(value), int(weight)))
 
-    # 1-based indices
-    result = ""
-    for index in [1, 2, 3, 4, 17, 117, 517, 997]:
-        result += f"{int(index - 1 in max_weight_independent_set)}"
-
-    return result
+    return knapsack_recursive(items, knapsack_size)
 
 
 if __name__ == '__main__':
