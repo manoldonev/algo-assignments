@@ -5,6 +5,7 @@ from collections import defaultdict
 
 from week1.johnson import compute_all_pairs_shortest_paths
 from week2.tsp import traveling_salesman_problem, calculate_euclidean_distance
+from week3.tsp_nearest_neighbor import traveling_salesman_problem as traveling_salesman_problem_nearest_neighbor
 
 
 # def main():
@@ -43,25 +44,37 @@ from week2.tsp import traveling_salesman_problem, calculate_euclidean_distance
 
 #     return shortest_shortest_path  # -19
 
-def main():
+# def main():
 
+#     points = []
+#     with open("tests/week2_tsp.txt") as handle:
+#         handle.readline()
+#         for line in handle:
+#             x, y = line.split()
+#             points.append((float(x), float(y)))
+
+#     points_0_12 = points[:13]
+#     points_11_24 = points[11:25]
+
+#     result1 = traveling_salesman_problem(points_0_12)
+#     result2 = traveling_salesman_problem(points_11_24)
+
+#     result = result1 + result2 - 2 * \
+#         calculate_euclidean_distance(points[11], points[12])
+
+#     return math.floor(result)  # 26442
+
+def main():
     points = []
-    with open("tests/week2_tsp.txt") as handle:
+    with open("tests/week3_nn.txt") as handle:
         handle.readline()
         for line in handle:
-            x, y = line.split()
-            points.append((float(x), float(y)))
+            index, x, y = line.split()
+            points.append((float(x), float(y), int(index)))
 
-    points_0_12 = points[:13]
-    points_11_24 = points[11:25]
+    distance = math.floor(traveling_salesman_problem_nearest_neighbor(points))
 
-    result1 = traveling_salesman_problem(points_0_12)
-    result2 = traveling_salesman_problem(points_11_24)
-
-    result = result1 + result2 - 2 * \
-        calculate_euclidean_distance(points[11], points[12])
-
-    return math.floor(result)  # 26442
+    return distance  # 1203406
 
 
 if __name__ == '__main__':
