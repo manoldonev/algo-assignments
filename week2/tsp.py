@@ -6,7 +6,8 @@ import itertools
 from collections import defaultdict
 
 
-def traveling_salesman_problem(graph):
+def traveling_salesman_problem(points):
+    graph = generate_complete_euclidean_distanace_graph(points)
     n = len(graph)
     edge_dict = _get_edges(graph)
 

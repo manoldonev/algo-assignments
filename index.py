@@ -4,7 +4,7 @@ import math
 from collections import defaultdict
 
 from week1.johnson import compute_all_pairs_shortest_paths
-from week2.tsp import traveling_salesman_problem, generate_complete_euclidean_distanace_graph, calculate_euclidean_distance
+from week2.tsp import traveling_salesman_problem, calculate_euclidean_distance
 
 
 # def main():
@@ -55,11 +55,8 @@ def main():
     points_0_12 = points[:13]
     points_11_24 = points[11:25]
 
-    graph = generate_complete_euclidean_distanace_graph(points_0_12)
-    graph2 = generate_complete_euclidean_distanace_graph(points_11_24)
-
-    result1 = traveling_salesman_problem(graph)
-    result2 = traveling_salesman_problem(graph2)
+    result1 = traveling_salesman_problem(points_0_12)
+    result2 = traveling_salesman_problem(points_11_24)
 
     result = result1 + result2 - 2 * \
         calculate_euclidean_distance(points[11], points[12])

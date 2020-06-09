@@ -7,22 +7,19 @@ from week2.tsp import generate_complete_euclidean_distanace_graph, traveling_sal
 
 def test_tsp1():
     points = [(1, 1), (4, 1), (1, 4), (4, 4)]
-    graph = generate_complete_euclidean_distanace_graph(points)
-    result = traveling_salesman_problem(graph)
+    result = traveling_salesman_problem(points)
     assert result == 12
 
 
 def test_tsp2():
     points = [(0, 0), (0, 3), (3, 3)]
-    graph = generate_complete_euclidean_distanace_graph(points)
-    result = traveling_salesman_problem(graph)
+    result = traveling_salesman_problem(points)
     assert math.floor(result) == 10
 
 
 def test_tsp3():
     points = [(0, 0), (4, 3), (4, 0), (0, 3)]
-    graph = generate_complete_euclidean_distanace_graph(points)
-    result = traveling_salesman_problem(graph)
+    result = traveling_salesman_problem(points)
     assert result == 14
 
 
@@ -41,8 +38,7 @@ def test_tsp4():
         (1.750, 2.00),
         (2.000, 2.00)
     ]
-    graph = generate_complete_euclidean_distanace_graph(points)
-    result = traveling_salesman_problem(graph)
+    result = traveling_salesman_problem(points)
     assert result == 4
 
 
@@ -64,8 +60,7 @@ def test_tsp5():
         (-57.5687,    -43.2506),
         (-43.0700,     14.5548)
     ]
-    graph = generate_complete_euclidean_distanace_graph(points)
-    result = traveling_salesman_problem(graph)
+    result = traveling_salesman_problem(points)
     assert math.floor(result) == 284
 
 
@@ -77,6 +72,5 @@ def test_tsp6():
               (4.05, 2.05),
               (2, 4.10),
               (3.414213562373095, 0.6357864376269047)]
-    graph = generate_complete_euclidean_distanace_graph(points)
-    result = traveling_salesman_problem(graph)
+    result = traveling_salesman_problem(points)
     assert math.floor(result) == 12
