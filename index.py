@@ -6,7 +6,7 @@ from collections import defaultdict
 from week1.johnson import compute_all_pairs_shortest_paths
 from week2.tsp import traveling_salesman_problem, calculate_euclidean_distance
 from week3.tsp_nearest_neighbor import traveling_salesman_problem as traveling_salesman_problem_nearest_neighbor
-
+from week4.two_sat import papadimitriou, reduce_clauses
 
 # def main():
 #     graph = defaultdict(list)
@@ -64,17 +64,34 @@ from week3.tsp_nearest_neighbor import traveling_salesman_problem as traveling_s
 
 #     return math.floor(result)  # 26442
 
+# def main():
+#     points = []
+#     with open("tests/week3_nn.txt") as handle:
+#         handle.readline()
+#         for line in handle:
+#             index, x, y = line.split()
+#             points.append((float(x), float(y), int(index)))
+
+#     distance = math.floor(traveling_salesman_problem_nearest_neighbor(points))
+
+#     return distance  # 1203406
+
+
 def main():
-    points = []
-    with open("tests/week3_nn.txt") as handle:
-        handle.readline()
-        for line in handle:
-            index, x, y = line.split()
-            points.append((float(x), float(y), int(index)))
+    results = []
+    for i in range(1, 7):
+        file = f"tests/week4_2sat{i}.txt"
+        clauses = set()
+        with open(file) as handle:
+            handle.readline()
+            for line in handle:
+                x, y = line.split()
+                clauses.add((int(x), int(y)))
 
-    distance = math.floor(traveling_salesman_problem_nearest_neighbor(points))
+        reduced_clauses = reduce_clauses(clauses)
+        results.append(int(papadimitriou(reduced_clauses)))
 
-    return distance  # 1203406
+    return "".join(map(str, results))
 
 
 if __name__ == '__main__':
