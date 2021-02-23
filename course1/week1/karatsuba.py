@@ -32,4 +32,4 @@ def multiply(x, y):
     b_d = multiply(b, d)
     a_d_plus_b_c = multiply(a + b, c + d) - a_c - b_d
 
-    return 10**(2 * nby2) * a_c + 10**nby2 * a_d_plus_b_c + b_d
+    return 10 ** (2 * nby2) * a_c + 10 ** nby2 * a_d_plus_b_c + b_d
