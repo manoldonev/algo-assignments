@@ -3,15 +3,15 @@ import sys
 import math
 from collections import defaultdict
 
-from week1.johnson import compute_all_pairs_shortest_paths
-from week2.tsp import traveling_salesman_problem, calculate_euclidean_distance
-from week3.tsp_nearest_neighbor import traveling_salesman_problem as traveling_salesman_problem_nearest_neighbor
-from week4.two_sat import papadimitriou, reduce_clauses
+from src.course4.week1.johnson import compute_all_pairs_shortest_paths
+from src.course4.week2.tsp import traveling_salesman_problem, calculate_euclidean_distance
+from src.course4.week3.tsp_nearest_neighbor import traveling_salesman_problem as traveling_salesman_problem_nearest_neighbor
+from src.course4.week4.two_sat import papadimitriou, reduce_clauses
 
 # def main():
 #     graph = defaultdict(list)
 
-#     # with open("tests/week1_g1.txt") as handle:
+#     # with open("src/course4/week1_g1.txt") as handle:
 #     #     handle.readline()
 #     #     for line in handle:
 #     #         tail, head, cost = line.split()
@@ -19,7 +19,7 @@ from week4.two_sat import papadimitriou, reduce_clauses
 
 #     # all_pairs_shortests_paths = compute_all_pairs_shortest_paths(graph)
 
-#     # with open("tests/week1_g2.txt") as handle:
+#     # with open("src/course4/week1_g2.txt") as handle:
 #     #     handle.readline()
 #     #     for line in handle:
 #     #         tail, head, cost = line.split()
@@ -29,7 +29,7 @@ from week4.two_sat import papadimitriou, reduce_clauses
 
 #     # return all_pairs_shortests_paths
 
-#     with open("tests/week1_g3.txt") as handle:
+#     with open("src/course4/week1_g3.txt") as handle:
 #         handle.readline()
 #         for line in handle:
 #             tail, head, cost = line.split()
@@ -44,10 +44,11 @@ from week4.two_sat import papadimitriou, reduce_clauses
 
 #     return shortest_shortest_path  # -19
 
+
 # def main():
 
 #     points = []
-#     with open("tests/week2_tsp.txt") as handle:
+#     with open("src/course4/week2_tsp.txt") as handle:
 #         handle.readline()
 #         for line in handle:
 #             x, y = line.split()
@@ -64,9 +65,10 @@ from week4.two_sat import papadimitriou, reduce_clauses
 
 #     return math.floor(result)  # 26442
 
+
 # def main():
 #     points = []
-#     with open("tests/week3_nn.txt") as handle:
+#     with open("src/course4/week3_nn.txt") as handle:
 #         handle.readline()
 #         for line in handle:
 #             index, x, y = line.split()
@@ -80,7 +82,7 @@ from week4.two_sat import papadimitriou, reduce_clauses
 def main():
     results = []
     for i in range(1, 7):
-        file = f"tests/week4_2sat{i}.txt"
+        file = f"src/course4/week4_2sat{i}.txt"
         clauses = set()
         with open(file) as handle:
             handle.readline()

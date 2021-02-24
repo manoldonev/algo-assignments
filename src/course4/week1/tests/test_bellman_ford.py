@@ -1,7 +1,7 @@
 
 import sys
 
-from week1.bellman_ford import compute_single_source_shortest_paths
+from src.course4.week1.bellman_ford import compute_single_source_shortest_paths
 
 
 def test_mixed_costs_no_negative_cycle():

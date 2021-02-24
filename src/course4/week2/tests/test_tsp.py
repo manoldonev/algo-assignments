@@ -2,7 +2,7 @@
 
 import math
 
-from week2.tsp import generate_complete_euclidean_distanace_graph, traveling_salesman_problem
+from src.course4.week2.tsp import generate_complete_euclidean_distanace_graph, traveling_salesman_problem
 
 
 def test_tsp1():

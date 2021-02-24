@@ -10,7 +10,6 @@ def compute_single_source_shortest_paths(graph, source, reconstruct_shortest_pat
 
     subproblems = [[0 for x in range(n)] for y in range(n + 1)]
     in_degree_neighbors = _compute_in_degree_neighbors(graph)
-    predecessors = {}
 
     # base cases
     for v in range(0, n):
@@ -41,14 +40,14 @@ def compute_single_source_shortest_paths(graph, source, reconstruct_shortest_pat
             shortest_paths = None
             if reconstruct_shortest_paths:
                 shortest_paths = _reconstruct_shortest_paths(
-                    graph, source, in_degree_neighbors, subproblems, shortest_lengths)
+                    graph, source, in_degree_neighbors, shortest_lengths)
 
             return shortest_lengths, shortest_paths
 
     return None, None  # negative cycle detected
 
 
-def _reconstruct_shortest_paths(graph, source, in_degree_neighbors, subproblems, shortest_lengths):
+def _reconstruct_shortest_paths(graph, source, in_degree_neighbors, shortest_lengths):
     shortest_paths = defaultdict(list)
 
     for v_key in graph:

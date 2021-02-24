@@ -2,7 +2,7 @@
 
 import sys
 
-from week1.johnson import compute_all_pairs_shortest_paths
+from src.course4.week1.johnson import compute_all_pairs_shortest_paths
 
 
 def test_mixed_costs_no_negative_cycle():

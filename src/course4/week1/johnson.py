@@ -2,8 +2,8 @@
 import sys
 from collections import defaultdict
 
-from week1.bellman_ford import compute_single_source_shortest_paths as bellman_ford_shortest_paths
-from week1.dijkstra import compute_single_source_shortest_paths as dijkstra_shortest_paths
+from src.course4.week1.bellman_ford import compute_single_source_shortest_paths as bellman_ford_shortest_paths
+from src.course2.week2.dijkstra_heapq import dijkstra as dijkstra_shortest_paths
 
 
 def compute_all_pairs_shortest_paths(graph):
