@@ -1,1 +1,1 @@
-# algo1-assignments
+# algo-assignments
