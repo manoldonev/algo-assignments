@@ -2,13 +2,13 @@
 
 """Test Playground"""
 
-from course1.week1 import karatsuba
+from src.course1.week1 import karatsuba
 
 x = 3141592653589793238462643383279502884197169399375105820974944592
 y = 2718281828459045235360287471352662497757247093699959574966967627
 print('{0:d}'.format(karatsuba.multiply(x, y)))
 
-# from course1.week2 import count_inversions
+# from src.course1.week2 import count_inversions
 
 # with open("course1/week2/integer_array.txt") as file_handle:
 #     lines = [int(line) for line in file_handle]
@@ -16,7 +16,7 @@ print('{0:d}'.format(karatsuba.multiply(x, y)))
 # _, inversions = count_inversions.sort_and_count(lines)
 # print(inversions)
 
-# from course1.week3 import count_comparisons
+# from src.course1.week3 import count_comparisons
 
 # with open("course1/week3/quicksort.txt") as file_handle:
 #     lines = [int(line) for line in file_handle]
@@ -26,7 +26,7 @@ print('{0:d}'.format(karatsuba.multiply(x, y)))
 
 # import math
 
-# from course1.week4.mincut import min_cut
+# from src.course1.week4.mincut import min_cut
 
 # graph = {}
 

@@ -1,7 +1,7 @@
 
 """Week2 Test Cases: Count Inversions"""
 
-from course1.week2.count_inversions import sort_and_count as count_inversions
+from src.course1.week2.count_inversions import sort_and_count as count_inversions
 
 
 class TestCountInversions:

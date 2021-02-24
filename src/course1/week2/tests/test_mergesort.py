@@ -1,6 +1,6 @@
 """Week2 Test Cases: Mergesort"""
 
-from course1.week2.mergesort import sort as mergesort
+from src.course1.week2.mergesort import sort as mergesort
 
 
 class TestMergesort:

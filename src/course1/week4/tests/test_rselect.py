@@ -1,6 +1,6 @@
 """Week4 Test Cases: Randomized Selection"""
 
-from course1.week4.rselect import rselect
+from src.course1.week4.rselect import rselect
 
 
 class TestRselect:

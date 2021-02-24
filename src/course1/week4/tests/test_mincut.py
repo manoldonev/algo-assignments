@@ -2,7 +2,7 @@
 
 import math
 
-from course1.week4.mincut import min_cut
+from src.course1.week4.mincut import min_cut
 
 
 class TestMinCut:

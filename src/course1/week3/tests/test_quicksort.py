@@ -1,6 +1,6 @@
 """Week3 Test Cases: Quicksort"""
 
-from course1.week3.quicksort import sort as randomized_quicksort
+from src.course1.week3.quicksort import sort as randomized_quicksort
 
 
 class TestQuicksort:

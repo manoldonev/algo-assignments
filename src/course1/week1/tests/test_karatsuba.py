@@ -3,7 +3,7 @@
 
 import pytest
 
-from course1.week1.karatsuba import multiply
+from src.course1.week1.karatsuba import multiply
 
 
 class TestKaratsubaMultiplication:
