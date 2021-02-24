@@ -1,12 +1,11 @@
 """Week4 Test Cases: Karger's Min Cut"""
 
 import math
-import unittest
 
 from course1.week4.mincut import min_cut
 
 
-class MinCutTests(unittest.TestCase):
+class TestMinCut:
     """Test cases for min cut."""
 
     def test_mincut(self):
@@ -31,8 +30,4 @@ class MinCutTests(unittest.TestCase):
 
             trials -= 1
 
-        self.assertEqual(result, 2)
-
-
-if __name__ == "__main__":
-    unittest.main(verbosity=2)
+        assert result == 2
