@@ -1,20 +1,20 @@
 #!/usr/bin/python
 
 import sys
-
 from collections import defaultdict
-from week1.schedule import schedule_by_difference, schedule_by_ratio
-from week1.prim_mst import prim
-from week2.clustering import clusterize
-from week2.hamming import calculate_hamming_clusters
-from week3.huffman import make_huffman_tree, get_encoding, get_max_length, get_min_length
-from week3.mwis import calculate_maximum_weight_independent_set, reconstruct_weight_independent_set
-from week4.knapsack import knapsack, knapsack_recursive
+
+from src.course3.week1.schedule import schedule_by_difference, schedule_by_ratio
+from src.course3.week1.prim_mst import prim
+from src.course3.week2.clustering import clusterize
+from src.course3.week2.hamming import calculate_hamming_clusters
+from src.course3.week3.huffman import make_huffman_tree, get_encoding, get_max_length, get_min_length
+from src.course3.week3.mwis import calculate_maximum_weight_independent_set, reconstruct_weight_independent_set
+from src.course3.week4.knapsack import knapsack, knapsack_recursive
 
 
 # def main():
 #     jobs = []
-#     with open("tests/week1_jobs.txt") as handle:
+#     with open("src/course3/week1_jobs.txt") as handle:
 #         handle.readline()  # skip first line specifying number of jobs
 #         for line in handle:
 #             weight, length = line.split()
@@ -31,7 +31,7 @@ from week4.knapsack import knapsack, knapsack_recursive
 
 # def main():
 #     graph = defaultdict(list)
-#     with open("tests/week1_prim.txt") as handle:
+#     with open("src/course3/week1_prim.txt") as handle:
 #         handle.readline()  # skip first line specifying number of vertices and edges
 #         for line in handle:
 #             vertex1, vertex2, cost = line.split()
@@ -50,7 +50,7 @@ from week4.knapsack import knapsack, knapsack_recursive
 # def main():
 #     graph = defaultdict(list)
 #     edge_list = []
-#     with open("tests/week2_clustering.txt") as handle:
+#     with open("src/course3/week2_clustering.txt") as handle:
 #         handle.readline()  # skip first line specifying number of vertices and edges
 #         for line in handle:
 #             vertex1, vertex2, cost = line.split()
@@ -68,7 +68,7 @@ from week4.knapsack import knapsack, knapsack_recursive
 
 # def main():
 #     numbers = []
-#     with open("tests/week2_clustering_big.txt") as handle:
+#     with open("src/course3/week2_clustering_big.txt") as handle:
 #         handle.readline()
 #         for line in handle:
 #             numbers.append(int(line.replace(" ", ""), base=2))
@@ -78,7 +78,7 @@ from week4.knapsack import knapsack, knapsack_recursive
 # def main():
 #     symbols = {}
 #     n = 0
-#     with open("tests/week3_huffman.txt") as handle:
+#     with open("src/course3/week3_huffman.txt") as handle:
 #         handle.readline()
 #         for line in handle:
 #             symbols[f"symbol{n}"] = int(line)
@@ -89,7 +89,7 @@ from week4.knapsack import knapsack, knapsack_recursive
 #     return encoding, get_max_length(encoding), get_min_length(encoding)
 
 # def main():
-#     with open("tests/week3_mwis.txt") as handle:
+#     with open("src/course3/week3_mwis.txt") as handle:
 #         handle.readline()
 #         graph_list = [int(line) for line in handle]
 
@@ -108,7 +108,7 @@ def main():
     sys.setrecursionlimit(10000)
 
     items = []
-    with open("tests/week4_knapsack_big.txt") as handle:
+    with open("src/course3/week4_knapsack_big.txt") as handle:
         knapsack_size, _ = handle.readline().split()
         knapsack_size = int(knapsack_size)
         for line in handle:

@@ -1,6 +1,6 @@
 """Week3 Test Cases Huffman Encoding"""
 
-from week3.huffman import make_huffman_tree, get_encoding, get_max_length, get_min_length
+from src.course3.week3.huffman import make_huffman_tree, get_encoding, get_max_length, get_min_length
 
 
 def test_huffman():

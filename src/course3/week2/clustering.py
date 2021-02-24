@@ -1,6 +1,7 @@
 
 from collections import defaultdict
-from week2.union_find import UnionFind
+
+from src.course3.week2.union_find import UnionFind
 
 
 def clusterize(graph, edge_list, cluster_count):

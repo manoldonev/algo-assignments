@@ -1,6 +1,6 @@
 """Week3 Test Cases Maximum-Weight Independent Set"""
 
-from week3.mwis import calculate_maximum_weight_independent_set, reconstruct_weight_independent_set
+from src.course3.week3.mwis import calculate_maximum_weight_independent_set, reconstruct_weight_independent_set
 
 
 def test_mwis():

@@ -1,13 +1,14 @@
 """Week2 Test Cases Max Spacing for K-order Cluster"""
 
 from collections import defaultdict
-from week2.clustering import clusterize
+
+from src.course3.week2.clustering import clusterize
 
 
 def test_clusterize():
     graph = defaultdict(list)
     edge_list = []
-    with open("tests/week2_clustering_test.txt") as handle:
+    with open("src/course3/week2_clustering_test.txt") as handle:
         handle.readline()
         for line in handle:
             vertex1, vertex2, cost = line.split()

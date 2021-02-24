@@ -1,6 +1,6 @@
 import itertools
 from collections import defaultdict
-from networkx.utils import UnionFind
+from networkx.utils.union_find import UnionFind
 
 
 def calculate_hamming_clusters(numbers):

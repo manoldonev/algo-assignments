@@ -1,6 +1,6 @@
 """Week4 Test Cases Knapsack """
 
-from week4.knapsack import knapsack, knapsack_recursive
+from src.course3.week4.knapsack import knapsack, knapsack_recursive
 
 
 def test_knapsack():

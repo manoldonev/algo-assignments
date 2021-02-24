@@ -3,7 +3,8 @@
 
 import sys
 from random import randint
-from week1.priority_queue import PriorityQueue
+
+from src.common.priority_queue import PriorityQueue
 
 
 def prim(graph):

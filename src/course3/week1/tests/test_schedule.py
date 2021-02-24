@@ -1,6 +1,6 @@
 """Week1 Test Cases Schedule"""
 
-from week1.schedule import schedule_by_difference, schedule_by_ratio
+from src.course3.week1.schedule import schedule_by_difference, schedule_by_ratio
 
 
 def test_schedule_by_difference():

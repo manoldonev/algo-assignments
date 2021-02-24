@@ -1,6 +1,6 @@
 """Week2 Test Cases Max Spacing for K-order Cluster Hamming Distance"""
 
-from week2.hamming import calculate_hamming_clusters
+from src.course3.week2.hamming import calculate_hamming_clusters
 
 
 def test_hamming():

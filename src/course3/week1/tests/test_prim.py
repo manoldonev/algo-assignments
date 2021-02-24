@@ -1,6 +1,6 @@
 """Week1 Test Cases Prim's MST"""
 
-from week1.prim_mst import prim
+from src.course3.week1.prim_mst import prim
 
 
 def test_prim_mst():
