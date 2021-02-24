@@ -10,7 +10,7 @@ print('{0:d}'.format(karatsuba.multiply(x, y)))
 
 # from src.course1.week2 import count_inversions
 
-# with open("course1/week2/integer_array.txt") as file_handle:
+# with open("src/course1/week2/integer_array.txt") as file_handle:
 #     lines = [int(line) for line in file_handle]
 
 # _, inversions = count_inversions.sort_and_count(lines)
@@ -18,7 +18,7 @@ print('{0:d}'.format(karatsuba.multiply(x, y)))
 
 # from src.course1.week3 import count_comparisons
 
-# with open("course1/week3/quicksort.txt") as file_handle:
+# with open("src/course1/week3/quicksort.txt") as file_handle:
 #     lines = [int(line) for line in file_handle]
 
 # _, comparisons = count_comparisons.sort_and_count(lines)
@@ -30,7 +30,7 @@ print('{0:d}'.format(karatsuba.multiply(x, y)))
 
 # graph = {}
 
-# with open("course1/week4/kargerMinCut.txt") as file_handle:
+# with open("src/course1/week4/kargerMinCut.txt") as file_handle:
 #     for line in file_handle:
 #         tokens = line.split()
 #         graph[tokens[0]] = tokens[1:]
