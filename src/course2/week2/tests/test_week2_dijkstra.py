@@ -1,8 +1,8 @@
 
 """Week2 Test Cases"""
 
-from week2.dijkstra_naive import dijkstra as dijkstra_naive
-from week2.dijkstra_heapq import dijkstra as dijkstra_heapq
+from src.course2.week2.dijkstra_naive import dijkstra as dijkstra_naive
+from src.course2.week2.dijkstra_heapq import dijkstra as dijkstra_heapq
 
 
 def test_dijkstra_naive():

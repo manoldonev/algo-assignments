@@ -2,7 +2,8 @@
 """Week4 Test Cases"""
 
 from collections import deque
-from week4.twoSumProblem import two_sum_generator
+
+from src.course2.week4.twoSumProblem import two_sum_generator
 
 
 def test_twoSum():

@@ -2,7 +2,8 @@
 """Week1 Test Cases Topological Sort"""
 
 from collections import deque
-from week1.topologicalSort import topological_sort
+
+from src.course2.week1.topologicalSort import topological_sort
 
 
 def test_topological_sort1():

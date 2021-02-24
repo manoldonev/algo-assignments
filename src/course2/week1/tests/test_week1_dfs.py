@@ -1,8 +1,8 @@
 
 """Week1 Test Cases DFS"""
 
-from week1.dfsRecursive import dfs_recursive
-from week1.dfs import dfs
+from src.course2.week1.dfsRecursive import dfs_recursive
+from src.course2.week1.dfs import dfs
 
 
 def test_dfs_recursive():

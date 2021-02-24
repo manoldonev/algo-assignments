@@ -2,14 +2,15 @@
 """Dijkstra's Shortest Paths Algorithm (heapq) Package"""
 
 import sys
+
 from heapq import heappush, heappop, heapify
 
 
-class PriorityQueue(object):
+class PriorityQueue:
     """Priority queue implementation based on heapq
     See https://docs.python.org/2/library/heapq.html#priority-queue-implementation-notes"""
 
-    REMOVED = '<removed-task>'
+    REMOVED = sys.maxsize
 
     def __init__(self, heap=None):
         if heap is None:

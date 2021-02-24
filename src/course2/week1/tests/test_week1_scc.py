@@ -1,7 +1,7 @@
 
 """Week1 Test Cases: Strongly Connected Components"""
 
-from week1.scc import scc
+from src.course2.week1.scc import scc
 
 
 def test_scc():

@@ -3,14 +3,14 @@
 """Test Playground"""
 
 import sys
-import resource
+# import resource
 import random
 from collections import defaultdict
-from week1.scc import scc
-from week2.dijkstra_naive import dijkstra
-from week2.dijkstra_heapq import dijkstra as dijkstra_heapq
-from week3.medianMaintenance import median
-from week4.twoSumProblem import two_sum
+from src.course2.week1.scc import scc
+from src.course2.week2.dijkstra_naive import dijkstra
+from src.course2.week2.dijkstra_heapq import dijkstra as dijkstra_heapq
+from src.course2.week3.medianMaintenance import median
+from src.course2.week4.twoSumProblem import two_sum
 
 # # set rescursion limit and stack size limit
 # sys.setrecursionlimit(10 ** 6)
@@ -20,7 +20,7 @@ from week4.twoSumProblem import two_sum
 # def main():
 #     graph = defaultdict(list)
 
-#     with open("tests/week1_scc.txt") as handle:
+#     with open("src/course2/week1_scc.txt") as handle:
 #         for line in handle:
 #             tokens = line.split()
 #             graph[tokens[0]].append(tokens[1])
@@ -33,12 +33,12 @@ from week4.twoSumProblem import two_sum
 
 # def main():
 #     graph = defaultdict(list)
-#     with open("tests/week2_dijkstraData.txt") as handle:
+#     with open("src/course2/week2_dijkstraData.txt") as handle:
 #         for line in handle:
 #             tokens = line.split()
 #             for i in range(1, len(tokens)):
 #                 graph[int(tokens[0])].append([int(number)
-# for number in tokens[i].split(",")])
+#                                               for number in tokens[i].split(",")])
 
 #     shortest_paths = dijkstra_heapq(graph, 1)
 
@@ -48,7 +48,7 @@ from week4.twoSumProblem import two_sum
 
 
 # def main():
-#     with open("tests/week3_median.txt") as handle:
+#     with open("src/course2/week3_median.txt") as handle:
 #         numbers = [int(line) for line in handle]
 
 #         calculated_medians = list(median(numbers))

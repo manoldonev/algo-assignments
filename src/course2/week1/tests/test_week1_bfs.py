@@ -1,8 +1,8 @@
 
 """Week1 Test Cases BFS"""
 
-from week1.bfs import bfs
-from week1.shortestPaths import shortest_paths
+from src.course2.week1.bfs import bfs
+from src.course2.week1.shortestPaths import shortest_paths
 
 
 def test_bfs():
