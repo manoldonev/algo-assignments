@@ -4,7 +4,7 @@
 import math
 
 
-def multiply(x, y):
+def multiply(x: int, y: int) -> int:
     """
     x = 10^(n/2)*a + b, y = 10^(n/2)*c + d where a, b, c, d are n/2 digit numbers
 

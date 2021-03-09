@@ -1,79 +1,80 @@
 
 """Quicksort Implementation"""
 
+from typing import List, Tuple
 
-def sort_and_count(array):
+
+def sort_and_count(numbers: List[int]) -> Tuple[List[int], int]:
     """Quicksort public method"""
 
-    comparisons = _sort_and_count(array, 0, len(array) - 1)
+    comparisons = _sort_and_count(numbers, 0, len(numbers) - 1)
 
-    return array, comparisons
+    return numbers, comparisons
 
 
-def _sort_and_count(array, l, r):
+def _sort_and_count(numbers: List[int], left: int, right: int) -> int:
     """Divide and conquer step"""
 
-    if l >= r:
+    if left >= right:
         return 0
 
-    pivot_index = partition(array, l, r)
+    pivot_index = partition(numbers, left, right)
 
-    comparisons_left = _sort_and_count(array, l, pivot_index - 1)
-    comparisions_right = _sort_and_count(array, pivot_index + 1, r)
+    comparisons_left = _sort_and_count(numbers, left, pivot_index - 1)
+    comparisions_right = _sort_and_count(numbers, pivot_index + 1, right)
 
-    return r - l + comparisons_left + comparisions_right
+    return right - left + comparisons_left + comparisions_right
 
 
-def partition(array, l, r):
+def partition(numbers: List[int], left: int, right: int) -> int:
     """Partition around pivot"""
-    pivot_index = choose_pivot_median(array, l, r)
-    pivot = array[pivot_index]
 
-    i = l + 1
-    j = l + 1
-    while j <= r:
-        if array[j] < pivot:
-            swap(array, i, j)
+    pivot_index = choose_pivot_median(numbers, left, right)
+
+    # Make sure chosen pivot is on first slot (relative to subarray)
+    numbers[left], numbers[pivot_index] = numbers[pivot_index], numbers[left]
+    pivot = numbers[left]
+
+    i = left + 1
+    j = left + 1
+    while j <= right:
+        if numbers[j] < pivot:
+            numbers[i], numbers[j] = numbers[j], numbers[i]
             i += 1
 
         j += 1
 
-    swap(array, l, i - 1)
+    numbers[left], numbers[i - 1] = numbers[i - 1], numbers[left]
 
     return i - 1
 
 
-def choose_pivot_first(_, l, __):
+def choose_pivot_first(_: List[int], left: int, __: int) -> int:
     """Choose first element as pivot"""
+    return left
 
-    return l
 
-
-def choose_pivot_last(array, l, r):
+def choose_pivot_last(_: List[int], __: int, right: int) -> int:
     """Choose last element as pivot"""
-
-    swap(array, l, r)
-    return l
+    return right
 
 
-def choose_pivot_median(array, l, r):
+def choose_pivot_median(numbers: List[int], left: int, right: int) -> int:
     """Choose median element as pivot"""
 
-    first = array[l]
-    last = array[r]
+    first = numbers[left]
+    last = numbers[right]
 
-    middle_index = l + (r - l) // 2
-    middle = array[middle_index]
+    middle_index = left + (right - left) // 2
+    middle = numbers[middle_index]
 
     median = find_median(first, middle, last)
-    median_index = array.index(median)
+    median_index = numbers.index(median)
 
-    swap(array, l, median_index)
-
-    return l
+    return median_index
 
 
-def find_median(a, b, c):
+def find_median(a: int, b: int, c: int) -> int:
     """Find median of three elements"""
     x = a - b
     y = b - c
@@ -86,10 +87,3 @@ def find_median(a, b, c):
         return c
 
     return a
-
-
-def swap(array, i, j):
-    """Swap routine"""
-    temp = array[i]
-    array[i] = array[j]
-    array[j] = temp

@@ -2,60 +2,54 @@
 """Randomized Quicksort Implementation"""
 
 from random import randint
+from typing import List
 
 
-def sort(array):
+def sort(numbers: List[int]) -> List[int]:
     """Quicksort public method"""
-    _sort(array, 0, len(array) - 1)
+    _sort(numbers, 0, len(numbers) - 1)
 
-    return array
+    return numbers
 
 
-def _sort(array, l, r):
+def _sort(numbers: List[int], left: int, right: int):
     """Divide and conquer step"""
 
-    if r <= l:
+    if left >= right:
         return
 
-    pivot_index = partition(array, l, r)
+    pivot_index = _partition(numbers, left, right)
 
-    _sort(array, l, pivot_index - 1)
-    _sort(array, pivot_index + 1, r)
-
-
-def choose_pivot(array, l, r):
-    """Choose pivot"""
-
-    # Choose random pivot
-    pivot_index = randint(l, r)
-
-    # Make sure chosen pivot is on first slot (relative)
-    swap(array, l, pivot_index)
-
-    return l
+    _sort(numbers, left, pivot_index - 1)
+    _sort(numbers, pivot_index + 1, right)
 
 
-def partition(array, l, r):
+def _partition(numbers: List[int], left: int, right: int) -> int:
     """Partition around pivot"""
-    pivot_index = choose_pivot(array, l, r)
-    pivot = array[pivot_index]
 
-    i = l + 1
-    j = l + 1
-    while j <= r:
-        if array[j] < pivot:
-            swap(array, i, j)
+    pivot_index = _choose_pivot_index(left, right)
+
+    # Make sure chosen pivot is on first slot (relative to subarray)
+    numbers[left], numbers[pivot_index] = numbers[pivot_index], numbers[left]
+    pivot = numbers[left]
+
+    # i denotes boundary b/n elements less than / greater than pivot.
+    # j denotes boundary b/n processed / non-processed elements
+    i = j = left + 1
+    while j <= right:
+        if numbers[j] < pivot:
+            numbers[i], numbers[j] = numbers[j], numbers[i]
             i += 1
 
         j += 1
 
-    swap(array, l, i - 1)
+    numbers[left], numbers[i - 1] = numbers[i - 1], numbers[left]
 
     return i - 1
 
 
-def swap(array, i, j):
-    """Swap routine"""
-    temp = array[i]
-    array[i] = array[j]
-    array[j] = temp
+def _choose_pivot_index(left: int, right: int):
+    """Choose pivot"""
+
+    # Choose random pivot
+    return randint(left, right)

@@ -2,62 +2,56 @@
 """Randomized Selection Implementation"""
 
 from random import randint
+from typing import List
 
 
-def rselect(array, i):
+def rselect(numbers: List[int], i: int) -> int:
     """Rselect public method"""
-    return _rselect(array, 0, len(array) - 1, i)
+    return _rselect(numbers, 0, len(numbers) - 1, i)
 
 
-def _rselect(array, l, r, i):
+def _rselect(numbers: List[int], left: int, right: int, i: int) -> int:
     """Divide and conquer step"""
 
-    if l >= r:
-        return array[r]
+    if left >= right:
+        return numbers[right]
 
-    pivot_index = partition(array, l, r)
+    pivot_index = _partition(numbers, left, right)
 
     if pivot_index == i:
-        return array[i]
-    elif pivot_index > i:
-        return _rselect(array, l, pivot_index - 1, i)
-    else:
-        return _rselect(array, pivot_index + 1, r, i)
+        return numbers[i]
+
+    if pivot_index > i:
+        return _rselect(numbers, left, pivot_index - 1, i)
+
+    return _rselect(numbers, pivot_index + 1, right, i)
 
 
-def partition(array, l, r):
+def _partition(numbers: List[int], left: int, right: int) -> int:
     """Partition around pivot"""
-    pivot_index = choose_pivot(array, l, r)
-    pivot = array[pivot_index]
 
-    i = l + 1
-    j = l + 1
-    while j <= r:
-        if array[j] < pivot:
-            swap(array, i, j)
+    pivot_index = _choose_pivot(numbers, left, right)
+
+    # Make sure chosen pivot is on first slot (relative to subarray)
+    numbers[left], numbers[pivot_index] = numbers[pivot_index], numbers[left]
+    pivot = numbers[left]
+
+    i = left + 1
+    j = left + 1
+    while j <= right:
+        if numbers[j] < pivot:
+            numbers[i], numbers[j] = numbers[j], numbers[i]
             i += 1
 
         j += 1
 
-    swap(array, l, i - 1)
+    numbers[left], numbers[i - 1] = numbers[i - 1], numbers[left]
 
     return i - 1
 
 
-def choose_pivot(array, l, r):
+def _choose_pivot(_: List[int], left: int, right: int) -> int:
     """Choose pivot"""
 
     # Choose random pivot
-    pivot_index = randint(l, r)
-
-    # Make sure chosen pivot is on first slot (relative)
-    swap(array, l, pivot_index)
-
-    return l
-
-
-def swap(array, i, j):
-    """Swap routine"""
-    temp = array[i]
-    array[i] = array[j]
-    array[j] = temp
+    return randint(left, right)

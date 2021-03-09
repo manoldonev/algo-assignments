@@ -1,30 +1,31 @@
 
 """ Mergesort Implementation """
 
+from typing import List
 
-def sort(array):
+
+def sort(numbers: List[int]) -> List[int]:
     """Divide & Conquer Step"""
 
-    n = len(array)
-    nby2 = n // 2
-
+    n = len(numbers)
     if n <= 1:
-        return array
+        return numbers
 
-    sorted_left = sort(array[:nby2])
-    sorted_right = sort(array[nby2:])
+    nby2 = n // 2
+    sorted_left = sort(numbers[:nby2])
+    sorted_right = sort(numbers[nby2:])
 
     return merge(sorted_left, sorted_right)
 
 
-def merge(left, right):
+def merge(left: List[int], right: List[int]) -> List[int]:
     """Combine Step"""
 
     n_left = len(left)
     n_right = len(right)
     i = 0
     j = 0
-    merged = []
+    merged: List[int] = []
 
     while i < n_left and j < n_right:
         if left[i] < right[j]:
