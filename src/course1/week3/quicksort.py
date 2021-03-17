@@ -2,17 +2,16 @@
 """Randomized Quicksort Implementation"""
 
 from random import randint
-from typing import List
 
 
-def sort(numbers: List[int]) -> List[int]:
+def sort(numbers: list[int]) -> list[int]:
     """Quicksort public method"""
     _sort(numbers, 0, len(numbers) - 1)
 
     return numbers
 
 
-def _sort(numbers: List[int], left: int, right: int):
+def _sort(numbers: list[int], left: int, right: int):
     """Divide and conquer step"""
 
     if left >= right:
@@ -24,7 +23,7 @@ def _sort(numbers: List[int], left: int, right: int):
     _sort(numbers, pivot_index + 1, right)
 
 
-def _partition(numbers: List[int], left: int, right: int) -> int:
+def _partition(numbers: list[int], left: int, right: int) -> int:
     """Partition around pivot"""
 
     pivot_index = _choose_pivot_index(left, right)

@@ -1,10 +1,8 @@
 
 """ Count Inversions (Extended Mergesort Algorithm) """
 
-from typing import List, Tuple
 
-
-def sort_and_count(numbers: List[int]) -> Tuple[List[int], int]:
+def sort_and_count(numbers: list[int]) -> tuple[list[int], int]:
     """Divide & Conquer Step"""
     n = len(numbers)
     nby2 = n // 2
@@ -20,13 +18,13 @@ def sort_and_count(numbers: List[int]) -> Tuple[List[int], int]:
     return merged, left_inversions + right_inversions + split_inversions
 
 
-def merge_and_count(left: List[int], right: List[int]) -> Tuple[List[int], int]:
+def merge_and_count(left: list[int], right: list[int]) -> tuple[list[int], int]:
     """Combine Step"""
     n_left = len(left)
     n_right = len(right)
     i = 0
     j = 0
-    merged: List[int] = []
+    merged: list[int] = []
     split_inversions = 0
 
     while i < n_left and j < n_right:

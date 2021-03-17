@@ -1,10 +1,8 @@
 
 """Quicksort Implementation"""
 
-from typing import List, Tuple
 
-
-def sort_and_count(numbers: List[int]) -> Tuple[List[int], int]:
+def sort_and_count(numbers: list[int]) -> tuple[list[int], int]:
     """Quicksort public method"""
 
     comparisons = _sort_and_count(numbers, 0, len(numbers) - 1)
@@ -12,7 +10,7 @@ def sort_and_count(numbers: List[int]) -> Tuple[List[int], int]:
     return numbers, comparisons
 
 
-def _sort_and_count(numbers: List[int], left: int, right: int) -> int:
+def _sort_and_count(numbers: list[int], left: int, right: int) -> int:
     """Divide and conquer step"""
 
     if left >= right:
@@ -26,7 +24,7 @@ def _sort_and_count(numbers: List[int], left: int, right: int) -> int:
     return right - left + comparisons_left + comparisions_right
 
 
-def partition(numbers: List[int], left: int, right: int) -> int:
+def partition(numbers: list[int], left: int, right: int) -> int:
     """Partition around pivot"""
 
     pivot_index = choose_pivot_median(numbers, left, right)
@@ -49,17 +47,17 @@ def partition(numbers: List[int], left: int, right: int) -> int:
     return i - 1
 
 
-def choose_pivot_first(_: List[int], left: int, __: int) -> int:
+def choose_pivot_first(_: list[int], left: int, __: int) -> int:
     """Choose first element as pivot"""
     return left
 
 
-def choose_pivot_last(_: List[int], __: int, right: int) -> int:
+def choose_pivot_last(_: list[int], __: int, right: int) -> int:
     """Choose last element as pivot"""
     return right
 
 
-def choose_pivot_median(numbers: List[int], left: int, right: int) -> int:
+def choose_pivot_median(numbers: list[int], left: int, right: int) -> int:
     """Choose median element as pivot"""
 
     first = numbers[left]

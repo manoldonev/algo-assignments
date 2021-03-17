@@ -2,15 +2,14 @@
 """Randomized Selection Implementation"""
 
 from random import randint
-from typing import List
 
 
-def rselect(numbers: List[int], i: int) -> int:
+def rselect(numbers: list[int], i: int) -> int:
     """Rselect public method"""
     return _rselect(numbers, 0, len(numbers) - 1, i)
 
 
-def _rselect(numbers: List[int], left: int, right: int, i: int) -> int:
+def _rselect(numbers: list[int], left: int, right: int, i: int) -> int:
     """Divide and conquer step"""
 
     if left >= right:
@@ -27,7 +26,7 @@ def _rselect(numbers: List[int], left: int, right: int, i: int) -> int:
     return _rselect(numbers, pivot_index + 1, right, i)
 
 
-def _partition(numbers: List[int], left: int, right: int) -> int:
+def _partition(numbers: list[int], left: int, right: int) -> int:
     """Partition around pivot"""
 
     pivot_index = _choose_pivot(numbers, left, right)
@@ -50,7 +49,7 @@ def _partition(numbers: List[int], left: int, right: int) -> int:
     return i - 1
 
 
-def _choose_pivot(_: List[int], left: int, right: int) -> int:
+def _choose_pivot(_: list[int], left: int, right: int) -> int:
     """Choose pivot"""
 
     # Choose random pivot

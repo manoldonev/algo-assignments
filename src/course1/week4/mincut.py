@@ -3,10 +3,10 @@
 
 from random import randint
 from copy import deepcopy
-from typing import List, MutableMapping
+from collections.abc import MutableMapping
 
 
-def min_cut(graph: MutableMapping[int, List[int]]):
+def min_cut(graph: MutableMapping[int, list[int]]):
     """Min Cut Public Method"""
 
     graph = deepcopy(graph)
@@ -21,7 +21,7 @@ def min_cut(graph: MutableMapping[int, List[int]]):
     return graph
 
 
-def choose_edge(graph: MutableMapping[int, List[int]], n: int):
+def choose_edge(graph: MutableMapping[int, list[int]], n: int):
     """Choose edge (u, v) uniformly at random"""
 
     u = list(graph.keys())[randint(0, n - 1)]
@@ -31,7 +31,7 @@ def choose_edge(graph: MutableMapping[int, List[int]], n: int):
     return u, v
 
 
-def contract(graph: MutableMapping[int, List[int]], u: int, v: int):
+def contract(graph: MutableMapping[int, list[int]], u: int, v: int):
     """Contract u and v into a single vertex"""
 
     degree_u = len(graph[u])
