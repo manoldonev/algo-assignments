@@ -14,7 +14,7 @@ from src.course3.week4.knapsack import knapsack, knapsack_recursive
 
 # def main():
 #     jobs = []
-#     with open("src/course3/week1_jobs.txt") as handle:
+#     with open('src/course3/week1_jobs.txt') as handle:
 #         handle.readline()  # skip first line specifying number of jobs
 #         for line in handle:
 #             weight, length = line.split()
@@ -31,7 +31,7 @@ from src.course3.week4.knapsack import knapsack, knapsack_recursive
 
 # def main():
 #     graph = defaultdict(list)
-#     with open("src/course3/week1_prim.txt") as handle:
+#     with open('src/course3/week1_prim.txt') as handle:
 #         handle.readline()  # skip first line specifying number of vertices and edges
 #         for line in handle:
 #             vertex1, vertex2, cost = line.split()
@@ -50,7 +50,7 @@ from src.course3.week4.knapsack import knapsack, knapsack_recursive
 # def main():
 #     graph = defaultdict(list)
 #     edge_list = []
-#     with open("src/course3/week2_clustering.txt") as handle:
+#     with open('src/course3/week2_clustering.txt') as handle:
 #         handle.readline()  # skip first line specifying number of vertices and edges
 #         for line in handle:
 #             vertex1, vertex2, cost = line.split()
@@ -68,20 +68,20 @@ from src.course3.week4.knapsack import knapsack, knapsack_recursive
 
 # def main():
 #     numbers = []
-#     with open("src/course3/week2_clustering_big.txt") as handle:
+#     with open('src/course3/week2_clustering_big.txt') as handle:
 #         handle.readline()
 #         for line in handle:
-#             numbers.append(int(line.replace(" ", ""), base=2))
+#             numbers.append(int(line.replace(' ', ''), base=2))
 
 #     return calculate_hamming_clusters(numbers)
 
 # def main():
 #     symbols = {}
 #     n = 0
-#     with open("src/course3/week3_huffman.txt") as handle:
+#     with open('src/course3/week3_huffman.txt') as handle:
 #         handle.readline()
 #         for line in handle:
-#             symbols[f"symbol{n}"] = int(line)
+#             symbols[f'symbol{n}'] = int(line)
 #             n += 1
 
 #     huffman_tree = make_huffman_tree(symbols)
@@ -89,7 +89,7 @@ from src.course3.week4.knapsack import knapsack, knapsack_recursive
 #     return encoding, get_max_length(encoding), get_min_length(encoding)
 
 # def main():
-#     with open("src/course3/week3_mwis.txt") as handle:
+#     with open('src/course3/week3_mwis.txt') as handle:
 #         handle.readline()
 #         graph_list = [int(line) for line in handle]
 
@@ -98,9 +98,9 @@ from src.course3.week4.knapsack import knapsack, knapsack_recursive
 #         graph_list, max_weights)
 
 #     # 1-based indices
-#     result = ""
+#     result = ''
 #     for index in [1, 2, 3, 4, 17, 117, 517, 997]:
-#         result += f"{int(index - 1 in max_weight_independent_set)}"
+#         result += f'{int(index - 1 in max_weight_independent_set)}'
 
 #     return result
 
@@ -108,7 +108,7 @@ def main():
     sys.setrecursionlimit(10000)
 
     items = []
-    with open("src/course3/week4_knapsack_big.txt") as handle:
+    with open('src/course3/week4_knapsack_big.txt') as handle:
         knapsack_size, _ = handle.readline().split()
         knapsack_size = int(knapsack_size)
         for line in handle:

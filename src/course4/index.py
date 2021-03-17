@@ -11,7 +11,7 @@ from src.course4.week4.two_sat import papadimitriou, reduce_clauses
 # def main():
 #     graph = defaultdict(list)
 
-#     # with open("src/course4/week1_g1.txt") as handle:
+#     # with open('src/course4/week1_g1.txt') as handle:
 #     #     handle.readline()
 #     #     for line in handle:
 #     #         tail, head, cost = line.split()
@@ -19,7 +19,7 @@ from src.course4.week4.two_sat import papadimitriou, reduce_clauses
 
 #     # all_pairs_shortests_paths = compute_all_pairs_shortest_paths(graph)
 
-#     # with open("src/course4/week1_g2.txt") as handle:
+#     # with open('src/course4/week1_g2.txt') as handle:
 #     #     handle.readline()
 #     #     for line in handle:
 #     #         tail, head, cost = line.split()
@@ -29,7 +29,7 @@ from src.course4.week4.two_sat import papadimitriou, reduce_clauses
 
 #     # return all_pairs_shortests_paths
 
-#     with open("src/course4/week1_g3.txt") as handle:
+#     with open('src/course4/week1_g3.txt') as handle:
 #         handle.readline()
 #         for line in handle:
 #             tail, head, cost = line.split()
@@ -48,7 +48,7 @@ from src.course4.week4.two_sat import papadimitriou, reduce_clauses
 # def main():
 
 #     points = []
-#     with open("src/course4/week2_tsp.txt") as handle:
+#     with open('src/course4/week2_tsp.txt') as handle:
 #         handle.readline()
 #         for line in handle:
 #             x, y = line.split()
@@ -68,7 +68,7 @@ from src.course4.week4.two_sat import papadimitriou, reduce_clauses
 
 # def main():
 #     points = []
-#     with open("src/course4/week3_nn.txt") as handle:
+#     with open('src/course4/week3_nn.txt') as handle:
 #         handle.readline()
 #         for line in handle:
 #             index, x, y = line.split()
@@ -82,7 +82,7 @@ from src.course4.week4.two_sat import papadimitriou, reduce_clauses
 def main():
     results = []
     for i in range(1, 7):
-        file = f"src/course4/week4_2sat{i}.txt"
+        file = f'src/course4/week4_2sat{i}.txt'
         clauses = set()
         with open(file) as handle:
             handle.readline()
@@ -93,7 +93,7 @@ def main():
         reduced_clauses = reduce_clauses(clauses)
         results.append(int(papadimitriou(reduced_clauses)))
 
-    return "".join(map(str, results))
+    return ''.join(map(str, results))
 
 
 if __name__ == '__main__':

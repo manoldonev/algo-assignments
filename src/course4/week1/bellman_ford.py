@@ -5,7 +5,7 @@ from collections import defaultdict
 
 
 def compute_single_source_shortest_paths(graph, source, reconstruct_shortest_paths=False):
-    # vertex indexing in "graph" is 1-based but subproblem implementation is 0-based
+    # vertex indexing in 'graph' is 1-based but subproblem implementation is 0-based
     n = len(graph)
 
     subproblems = [[0 for x in range(n)] for y in range(n + 1)]

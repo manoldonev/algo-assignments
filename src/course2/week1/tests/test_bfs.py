@@ -8,7 +8,7 @@ from src.course2.week1.bfs import bfs
 from src.course2.week1.shortest_paths import shortest_paths
 
 
-@pytest.fixture(name="graph")
+@pytest.fixture(name='graph')
 def fixture_graph():
     return {
         0: [1, 3, 4],

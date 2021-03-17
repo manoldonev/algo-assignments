@@ -20,7 +20,7 @@ sys.setrecursionlimit(10 ** 6)
 def main():
     graph: dict[str, list[str]] = defaultdict(list)
 
-    with open("src/course2/week1/scc.txt") as handle:
+    with open('src/course2/week1/scc.txt') as handle:
         for line in handle:
             tokens = line.split()
             graph[tokens[0]].append(tokens[1])
@@ -32,22 +32,22 @@ def main():
 
 # def main():
 #     graph: dict[int, list[list[int]]] = defaultdict(list)
-#     with open("src/course2/week2/dijkstra_data.txt") as handle:
+#     with open('src/course2/week2/dijkstra_data.txt') as handle:
 #         for line in handle:
 #             tokens = line.split()
 #             for i in range(1, len(tokens)):
 #                 graph[int(tokens[0])].append([int(number)
-#                                               for number in tokens[i].split(",")])
+#                                               for number in tokens[i].split(',')])
 
 #     shortest_paths = dijkstra_heapq(graph, 1)
 
 #     test_cases = [str(shortest_paths[x])
 #                   for x in [7, 37, 59, 82, 99, 115, 133, 165, 188, 197]]
-#     return ",".join(test_cases)
+#     return ','.join(test_cases)
 
 
 # def main():
-#     with open("src/course2/week3/median.txt") as handle:
+#     with open('src/course2/week3/median.txt') as handle:
 #         numbers = [int(line) for line in handle]
 
 #         calculated_medians = list(median(numbers))
@@ -57,7 +57,7 @@ def main():
 
 
 # def main():
-#     with open("src/course2/week4/prob-2sum.txt") as handle:
+#     with open('src/course2/week4/prob-2sum.txt') as handle:
 #         numbers = [int(line) for line in handle]
 #         return two_sum(numbers)
 

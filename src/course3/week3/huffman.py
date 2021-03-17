@@ -44,18 +44,18 @@ def get_min_length(encoding):
     return min_length
 
 
-def _flatten_to_dict(tree, codeword="", code_dict=None):
+def _flatten_to_dict(tree, codeword='', code_dict=None):
     if code_dict is None:
         code_dict = {}
 
     if tree.symbol:
-        if codeword == "":
-            codeword = "0"
+        if codeword == '':
+            codeword = '0'
 
         code_dict[tree.symbol] = codeword
     else:
-        _flatten_to_dict(tree.zero, codeword+"0", code_dict)
-        _flatten_to_dict(tree.one, codeword+"1", code_dict)
+        _flatten_to_dict(tree.zero, codeword+'0', code_dict)
+        _flatten_to_dict(tree.one, codeword+'1', code_dict)
 
     return code_dict
 
@@ -71,7 +71,7 @@ class HuffmanNode:
         return self.weight < other.weight
 
     def __repr__(self):
-        return f"{self.symbol}: {self.weight}"
+        return f'{self.symbol}: {self.weight}'
 
 # class HuffmanCompression:
 #     def __init__(self, symbol_weights):

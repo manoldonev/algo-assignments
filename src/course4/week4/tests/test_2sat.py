@@ -40,7 +40,7 @@ def test_2sat_4clauses_with_reduce_unsatisfiable():
 
 def test_2sat_400_clauses():
     clauses = []
-    with open("src/course4/week4_2sat_400.txt") as handle:
+    with open('src/course4/week4_2sat_400.txt') as handle:
         handle.readline()
         for line in handle:
             x, y = line.split()
@@ -55,7 +55,7 @@ def test_2sat_400_clauses():
 
 def test_2sat_800_clauses():
     clauses = []
-    with open("src/course4/week4_2sat_800.txt") as handle:
+    with open('src/course4/week4_2sat_800.txt') as handle:
         handle.readline()
         for line in handle:
             x, y = line.split()
@@ -67,7 +67,7 @@ def test_2sat_800_clauses():
 
 def test_2sat_800_clauses_unsatisfiable():
     clauses = []
-    with open("src/course4/week4_2sat_800_2.txt") as handle:
+    with open('src/course4/week4_2sat_800_2.txt') as handle:
         handle.readline()
         for line in handle:
             x, y = line.split()

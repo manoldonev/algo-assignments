@@ -8,7 +8,7 @@ from src.course2.week1.dfs_recursive import dfs_recursive
 from src.course2.week1.dfs import dfs
 
 
-@pytest.fixture(name="graph")
+@pytest.fixture(name='graph')
 def fixture_graph():
     return {
         0: [1, 3, 4],

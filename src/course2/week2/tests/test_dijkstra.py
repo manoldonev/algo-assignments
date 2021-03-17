@@ -7,7 +7,7 @@ from src.course2.week2.dijkstra_naive import dijkstra as dijkstra_naive
 from src.course2.week2.dijkstra_heapq import dijkstra as dijkstra_heapq
 
 
-@pytest.fixture(name="graph")
+@pytest.fixture(name='graph')
 def fixture_graph():
     return {
         'a': [['b', 1], ['c', 4]],

@@ -21,7 +21,7 @@ def traveling_salesman_problem(points):
             # subset s of size m that contains 0
             subset = (0, ) + c
 
-            # includes the "otherwise" base case (+infinity for any subset != {0} and subproblem size = 1)
+            # includes the 'otherwise' base case (+infinity for any subset != {0} and subproblem size = 1)
             subproblems[subset] = [sys.maxsize] * n
 
             for j in subset:

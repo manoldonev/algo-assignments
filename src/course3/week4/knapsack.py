@@ -29,7 +29,7 @@ def knapsack_recursive(items, knapsack_size, n=None, memo=None):
         memo = {}
 
     item_value, item_weight = items[n - 1]
-    item_key = f"{n - 1}_{knapsack_size}"
+    item_key = f'{n - 1}_{knapsack_size}'
 
     if (item_key in memo):
         return memo[item_key]
