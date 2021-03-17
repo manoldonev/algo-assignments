@@ -1,9 +1,10 @@
 
 """Week1 Test Cases DFS"""
 
+from collections.abc import Iterable, Mapping
 import pytest
 
-from src.course2.week1.dfsRecursive import dfs_recursive
+from src.course2.week1.dfs_recursive import dfs_recursive
 from src.course2.week1.dfs import dfs
 
 
@@ -20,11 +21,11 @@ def fixture_graph():
     }
 
 
-def test_dfs_recursive(graph):
+def test_dfs_recursive(graph: Mapping[int, Iterable[int]]):
     path = dfs_recursive(graph, 0)
     assert path == [0, 1, 2, 6, 3, 4, 5]
 
 
-def test_dfs(graph):
+def test_dfs(graph: Mapping[int, Iterable[int]]):
     path = dfs(graph, 0)
     assert path == [0, 4, 5, 3, 6, 2, 1]

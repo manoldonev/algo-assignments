@@ -2,23 +2,22 @@
 """Shortest Path Package"""
 
 from collections import deque
+from collections.abc import Iterable, Mapping
 
 
-def shortest_paths(graph, start):
-    """Shortest Path"""
+def shortest_paths(graph: Mapping[int, Iterable[int]], start: int):
+    """Shortest Paths"""
     explored = set([start])
     queue = deque([start])
     dist = {start: 0}
 
     while queue:
-        vertex = queue.popleft()
+        vertex = queue.pop()
 
-        # TODO: Can this be done with queue.extend(...) + inline
-        # generator/yield?
         for node in graph[vertex]:
             if node not in explored:
                 explored.add(node)
-                queue.append(node)
+                queue.appendleft(node)
                 dist[node] = dist[vertex] + 1
 
     return dist

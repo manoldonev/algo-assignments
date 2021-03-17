@@ -1,9 +1,13 @@
 
 """Depth-First Search (Recursive) Package"""
 
+from typing import Optional
+from collections.abc import Iterable, Mapping
 
-def dfs_recursive(graph, start, path=None):
+
+def dfs_recursive(graph: Mapping[int, Iterable[int]], start: int, path: Optional[list[int]] = None):
     """Depth-First Search (Recursive)"""
+
     if path is None:
         path = []
 

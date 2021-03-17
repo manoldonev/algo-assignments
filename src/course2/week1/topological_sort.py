@@ -2,16 +2,16 @@
 """Topological Sort Package"""
 
 from collections import deque
+from collections.abc import Iterable, Mapping
 
 
-class Tracker(object):
-
+class Tracker():
     def __init__(self):
         self.explored = set()
         self.sort_order = deque()
 
 
-def topological_sort(graph):
+def topological_sort(graph: Mapping[int, Iterable[int]]):
     """Topological Sort"""
     tracker = Tracker()
 
@@ -22,7 +22,7 @@ def topological_sort(graph):
     return tracker.sort_order
 
 
-def dfs(graph, start, tracker):
+def dfs(graph: Mapping[int, Iterable[int]], start: int, tracker: Tracker):
     """Depth-First Search (Recursive)"""
     tracker.explored.add(start)
 

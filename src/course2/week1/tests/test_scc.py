@@ -39,7 +39,7 @@ def test_scc_reversed_graph():
 
 
 def test_scc_node_no_outbound_edges():
-    graph = {
+    graph: dict[str, list[str]] = {
         'a': ['b'],
         'b': ['c', 'd'],
         'c': ['a'],
@@ -56,7 +56,7 @@ def test_scc_node_no_outbound_edges():
 
 
 def test_scc_no_edges():
-    graph = {
+    graph: dict[str, list[str]] = {
         'a': [],
         'b': [],
         'c': []
@@ -66,7 +66,7 @@ def test_scc_no_edges():
 
 
 def test_scc_single_node():
-    graph = {
+    graph: dict[str, list[str]] = {
         'a': []
     }
 
@@ -74,7 +74,7 @@ def test_scc_single_node():
 
 
 def test_scc_single_edge():
-    graph = {
+    graph: dict[str, list[str]] = {
         'a': ['b'],
         'b': []
     }

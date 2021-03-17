@@ -3,13 +3,14 @@
 
 from collections import deque
 from collections import defaultdict
+from collections.abc import Iterable, Mapping
+from typing import Optional
 
 
-class Tracker(object):
-
+class Tracker():
     def __init__(self):
-        self.current_source = None
-        self.sccs_by_leader = defaultdict(list)
+        self.current_source: Optional[str] = None
+        self.sccs_by_leader: Mapping[str, list[str]] = defaultdict(list)
         self.finish_times_reversed = deque()
 
         """Sets are implemented using hash tables thus membership test does not depend
@@ -18,7 +19,7 @@ class Tracker(object):
         self.explored = set()
 
 
-def scc(graph):
+def scc(graph: Mapping[str, Iterable[str]]):
     """Strongly Connected Components"""
     graph_reversed = reverse_graph(graph)
 
@@ -31,7 +32,7 @@ def scc(graph):
     return tracker2.sccs_by_leader
 
 
-def dfs_loop(graph, nodes, tracker):
+def dfs_loop(graph: Mapping[str, Iterable[str]], nodes: Iterable[str], tracker: Tracker):
     """Depth First Search Loop"""
     for node in nodes:
         if node not in tracker.explored:
@@ -39,10 +40,11 @@ def dfs_loop(graph, nodes, tracker):
             dfs(graph, node, tracker)
 
 
-def dfs(graph, start, tracker):
+def dfs(graph: Mapping[str, Iterable[str]], start: str, tracker: Tracker):
     """Depth First Search"""
     tracker.explored.add(start)
-    tracker.sccs_by_leader[tracker.current_source].append(start)
+    if tracker.current_source:
+        tracker.sccs_by_leader[tracker.current_source].append(start)
 
     for node in graph[start]:
         if node not in tracker.explored:
@@ -51,9 +53,9 @@ def dfs(graph, start, tracker):
     tracker.finish_times_reversed.appendleft(start)
 
 
-def reverse_graph(graph):
+def reverse_graph(graph: Mapping[str, Iterable[str]]):
     """Reverse edges in a directed graph"""
-    reversed_graph = defaultdict(list)
+    reversed_graph: dict[str, list[str]] = defaultdict(list)
 
     for tail, head_list in graph.items():
         if not head_list and tail not in reversed_graph:

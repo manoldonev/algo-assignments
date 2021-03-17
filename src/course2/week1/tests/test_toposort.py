@@ -3,7 +3,7 @@
 
 from collections import deque
 
-from src.course2.week1.topologicalSort import topological_sort
+from src.course2.week1.topological_sort import topological_sort
 
 
 def test_topological_sort1():
