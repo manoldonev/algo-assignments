@@ -3,11 +3,12 @@
 
 import sys
 from random import randint
+from typing import Mapping
 
-from src.common.priority_queue import PriorityQueue
+from src.common.priority_queue import PriorityQueue, PrioritizedItem
 
 
-def prim(graph):
+def prim(graph: Mapping[int, list[tuple[int, int]]]):
     n = len(graph)
     source = randint(1, n)
 
@@ -38,9 +39,13 @@ def prim(graph):
     return mst
 
 
-def initialize_heap(graph, source):
-    costs = {key: (sys.maxsize, (-1, -1)) for key in graph if key != source}
+def initialize_heap(graph: Mapping[int, list[tuple[int, int]]], source: int):
+    costs: dict[int, tuple[int, int, int]] = {
+        key: (sys.maxsize, -1, -1) for key in graph if key != source}
     for vertex2, cost in graph[source]:
         costs[vertex2] = (cost, source, vertex2)
 
-    return PriorityQueue([[value, key] for key, value in costs.items()])
+    items = [PrioritizedItem(value, key)
+             for key, value in costs.items()]
+
+    return PriorityQueue(items)
