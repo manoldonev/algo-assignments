@@ -4,7 +4,7 @@
 from heapq import heappop, heappush
 
 
-def median(numbers):
+def median(numbers: list[int]):
     """Median Maintenance"""
     heap_low = [-numbers[0]]
     yield abs(heap_low[0])
@@ -17,12 +17,12 @@ def median(numbers):
     yield abs(heap_low[0])
 
     diff = 0
-    for n in numbers[2:]:
-        if n > heap_high[0]:
-            heappush(heap_high, n)
+    for value in numbers[2:]:
+        if value > heap_high[0]:
+            heappush(heap_high, value)
             diff += 1
         else:
-            heappush(heap_low, -n)
+            heappush(heap_low, -value)
             diff -= 1
 
         if diff < -1:

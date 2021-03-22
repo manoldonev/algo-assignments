@@ -1,7 +1,7 @@
 
 """Week3 Test Cases (Median Maintenanace)"""
 
-from src.course2.week3.medianMaintenance import median
+from src.course2.week3.median_maintenance import median
 
 
 def test_median():
