@@ -41,7 +41,7 @@ class PriorityQueue(Generic[T, S]):
         if task in self._entry_finder:
             self.remove_task(task)
 
-        entry = PrioritizedItem[T, S](priority, task)
+        entry = PrioritizedItem(priority, task)
         self._entry_finder[task] = entry
         heappush(self._heap, entry)
 
