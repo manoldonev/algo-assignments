@@ -12,8 +12,9 @@ def calculate_hamming_clusters(numbers):
     union_find = UnionFind(numbers_map)
 
     hamming_distance_one = [1 << i for i in range(24)]
-    hamming_distance_two = [1 << i ^ 1 << j for i,
-                            j in itertools.combinations(range(24), 2)]
+    hamming_distance_two = [
+        1 << i ^ 1 << j for i, j in itertools.combinations(range(24), 2)
+    ]
 
     hamming_distances = [*hamming_distance_one, *hamming_distance_two]
 

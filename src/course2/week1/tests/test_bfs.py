@@ -1,4 +1,3 @@
-
 """Week1 Test Cases BFS"""
 
 from collections.abc import Iterable, Mapping
@@ -8,7 +7,7 @@ from src.course2.week1.bfs import bfs
 from src.course2.week1.shortest_paths import shortest_paths
 
 
-@pytest.fixture(name='graph')
+@pytest.fixture(name="graph")
 def fixture_graph():
     return {
         0: [1, 3, 4],
@@ -17,7 +16,7 @@ def fixture_graph():
         3: [0, 4, 6],
         4: [0, 1, 3, 5],
         5: [4],
-        6: [2, 3]
+        6: [2, 3],
     }
 
 

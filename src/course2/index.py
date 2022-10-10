@@ -3,6 +3,7 @@
 """Test Playground"""
 
 import sys
+
 # import resource
 
 from collections import defaultdict
@@ -13,14 +14,14 @@ from src.course2.week3.medianMaintenance import median
 from src.course2.week4.twoSumProblem import two_sum
 
 # # set rescursion limit and stack size limit
-sys.setrecursionlimit(10 ** 6)
+sys.setrecursionlimit(10**6)
 # resource.setrlimit(resource.RLIMIT_STACK, (2 ** 29, 2 ** 30))
 
 
 def main():
     graph: dict[str, list[str]] = defaultdict(list)
 
-    with open('src/course2/week1/scc.txt') as handle:
+    with open("src/course2/week1/scc.txt") as handle:
         for line in handle:
             tokens = line.split()
             graph[tokens[0]].append(tokens[1])
@@ -62,5 +63,5 @@ def main():
 #         return two_sum(numbers)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(main())

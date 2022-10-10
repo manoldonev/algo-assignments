@@ -1,11 +1,15 @@
-
 import sys
 import math
 from collections import defaultdict
 
 from src.course4.week1.johnson import compute_all_pairs_shortest_paths
-from src.course4.week2.tsp import traveling_salesman_problem, calculate_euclidean_distance
-from src.course4.week3.tsp_nearest_neighbor import traveling_salesman_problem as traveling_salesman_problem_nearest_neighbor
+from src.course4.week2.tsp import (
+    traveling_salesman_problem,
+    calculate_euclidean_distance,
+)
+from src.course4.week3.tsp_nearest_neighbor import (
+    traveling_salesman_problem as traveling_salesman_problem_nearest_neighbor,
+)
 from src.course4.week4.two_sat import papadimitriou, reduce_clauses
 
 # def main():
@@ -82,7 +86,7 @@ from src.course4.week4.two_sat import papadimitriou, reduce_clauses
 def main():
     results = []
     for i in range(1, 7):
-        file = f'src/course4/week4_2sat{i}.txt'
+        file = f"src/course4/week4_2sat{i}.txt"
         clauses = set()
         with open(file) as handle:
             handle.readline()
@@ -93,8 +97,8 @@ def main():
         reduced_clauses = reduce_clauses(clauses)
         results.append(int(papadimitriou(reduced_clauses)))
 
-    return ''.join(map(str, results))
+    return "".join(map(str, results))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(main())

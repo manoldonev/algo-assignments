@@ -1,4 +1,3 @@
-
 """Strongly Connected Components Package"""
 
 from collections import deque
@@ -7,7 +6,7 @@ from collections.abc import Iterable, Mapping
 from typing import Optional
 
 
-class Tracker():
+class Tracker:
     def __init__(self):
         self.current_source: Optional[str] = None
         self.sccs_by_leader: Mapping[str, list[str]] = defaultdict(list)
@@ -32,7 +31,9 @@ def scc(graph: Mapping[str, Iterable[str]]):
     return tracker2.sccs_by_leader
 
 
-def dfs_loop(graph: Mapping[str, Iterable[str]], nodes: Iterable[str], tracker: Tracker):
+def dfs_loop(
+    graph: Mapping[str, Iterable[str]], nodes: Iterable[str], tracker: Tracker
+):
     """Depth First Search Loop"""
     for node in nodes:
         if node not in tracker.explored:

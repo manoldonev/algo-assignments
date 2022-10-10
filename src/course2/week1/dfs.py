@@ -1,4 +1,3 @@
-
 """Depth-First Search Package"""
 
 from collections.abc import Iterable, Mapping

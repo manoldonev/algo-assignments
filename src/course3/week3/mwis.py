@@ -1,4 +1,3 @@
-
 import itertools
 
 
@@ -7,8 +6,9 @@ def calculate_maximum_weight_independent_set(graph_list):
 
     index = 2
     for vertex_weight in itertools.islice(graph_list, 1, None):
-        max_weights.append(max(max_weights[index - 1],
-                               max_weights[index - 2] + vertex_weight))
+        max_weights.append(
+            max(max_weights[index - 1], max_weights[index - 2] + vertex_weight)
+        )
         index += 1
 
     return max_weights

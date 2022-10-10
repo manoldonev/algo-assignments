@@ -1,4 +1,3 @@
-
 """Breadth-First Search Package"""
 
 from collections import deque

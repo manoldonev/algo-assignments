@@ -1,4 +1,3 @@
-
 """Randomized Selection Implementation"""
 
 from random import randint

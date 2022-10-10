@@ -1,4 +1,3 @@
-
 """Median Maintenance Package"""
 
 from heapq import heappop, heappush

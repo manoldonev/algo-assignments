@@ -7,8 +7,16 @@ from src.course3.week1.schedule import schedule_by_difference, schedule_by_ratio
 from src.course3.week1.prim_mst import prim
 from src.course3.week2.clustering import clusterize
 from src.course3.week2.hamming import calculate_hamming_clusters
-from src.course3.week3.huffman import make_huffman_tree, get_encoding, get_max_length, get_min_length
-from src.course3.week3.mwis import calculate_maximum_weight_independent_set, reconstruct_weight_independent_set
+from src.course3.week3.huffman import (
+    make_huffman_tree,
+    get_encoding,
+    get_max_length,
+    get_min_length,
+)
+from src.course3.week3.mwis import (
+    calculate_maximum_weight_independent_set,
+    reconstruct_weight_independent_set,
+)
 from src.course3.week4.knapsack import knapsack, knapsack_recursive
 
 
@@ -104,11 +112,12 @@ from src.course3.week4.knapsack import knapsack, knapsack_recursive
 
 #     return result
 
+
 def main():
     sys.setrecursionlimit(10000)
 
     items = []
-    with open('src/course3/week4_knapsack_big.txt') as handle:
+    with open("src/course3/week4_knapsack_big.txt") as handle:
         knapsack_size, _ = handle.readline().split()
         knapsack_size = int(knapsack_size)
         for line in handle:
@@ -118,5 +127,5 @@ def main():
     return knapsack_recursive(items, knapsack_size)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(main())

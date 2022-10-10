@@ -1,4 +1,3 @@
-
 """ Count Inversions (Extended Mergesort Algorithm) """
 
 

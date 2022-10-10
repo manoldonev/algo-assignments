@@ -1,4 +1,3 @@
-
 """Test cases for count inversions challenge."""
 
 from src.course1.week2.count_inversions import sort_and_count as count_inversions

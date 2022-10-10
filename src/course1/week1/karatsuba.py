@@ -1,4 +1,3 @@
-
 """ Karatsuba Multiplication """
 
 import math
@@ -23,13 +22,13 @@ def multiply(x: int, y: int) -> int:
     n = max(int(math.log10(x)), int(math.log10(y))) + 1
     nby2 = n // 2
 
-    a = x // 10**(nby2)
-    b = x % 10**(nby2)
-    c = y // 10**(nby2)
-    d = y % 10**(nby2)
+    a = x // 10 ** (nby2)
+    b = x % 10 ** (nby2)
+    c = y // 10 ** (nby2)
+    d = y % 10 ** (nby2)
 
     a_c = multiply(a, c)
     b_d = multiply(b, d)
     a_d_plus_b_c = multiply(a + b, c + d) - a_c - b_d
 
-    return 10 ** (2 * nby2) * a_c + 10 ** nby2 * a_d_plus_b_c + b_d
+    return 10 ** (2 * nby2) * a_c + 10**nby2 * a_d_plus_b_c + b_d
