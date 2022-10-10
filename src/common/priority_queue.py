@@ -2,8 +2,8 @@ from heapq import heappush, heappop, heapify
 from dataclasses import dataclass, field
 from typing import Generic, Optional, TypeVar
 
-T = TypeVar('T')
-S = TypeVar('S')
+T = TypeVar("T")
+S = TypeVar("S")
 
 
 @dataclass(order=True)
@@ -28,8 +28,7 @@ class PriorityQueue(Generic[T, S]):
 
         # mapping of tasks to entries
         self._entry_finder: dict[T, PrioritizedItem[T, S]] = {
-            entry.task: entry
-            for entry in items
+            entry.task: entry for entry in items
         }
 
     @property
@@ -60,4 +59,4 @@ class PriorityQueue(Generic[T, S]):
                 del self._entry_finder[item.task]
                 return item.priority, item.task
 
-        raise KeyError('pop from an empty priority queue')
+        raise KeyError("pop from an empty priority queue")

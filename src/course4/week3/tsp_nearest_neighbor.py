@@ -1,4 +1,3 @@
-
 import sys
 import math
 
@@ -15,7 +14,8 @@ def traveling_salesman_problem(points):
     index = source_index_after_sort
     while n > 0:
         nearest_neighbor_index, nearest_distance = _find_nearest_neighbor_index(
-            index, points, explored)
+            index, points, explored
+        )
 
         explored.add(nearest_neighbor_index)
         total_distance += nearest_distance
@@ -23,7 +23,8 @@ def traveling_salesman_problem(points):
         n -= 1
     else:
         total_distance += _calculate_euclidean_distance(
-            points[nearest_neighbor_index], points[source_index_after_sort])
+            points[nearest_neighbor_index], points[source_index_after_sort]
+        )
 
     return total_distance
 
@@ -46,7 +47,10 @@ def _find_nearest_neighbor_index(source_index, points, explored):
                 min_distance = distance
                 min_distance_index = index
             # choose lower original index to break ties
-            elif min_distance == distance and points[index][2] < points[min_distance_index][2]:
+            elif (
+                min_distance == distance
+                and points[index][2] < points[min_distance_index][2]
+            ):
                 min_distance_index = index
 
             # x coordinates are guaranteed to be sorted
@@ -67,7 +71,10 @@ def _find_nearest_neighbor_index(source_index, points, explored):
                 min_distance = distance
                 min_distance_index = index
             # choose lower original index to break ties
-            elif min_distance == distance and points[index][2] < points[min_distance_index][2]:
+            elif (
+                min_distance == distance
+                and points[index][2] < points[min_distance_index][2]
+            ):
                 min_distance_index = index
 
             # x coordinates are guaranteed to be sorted

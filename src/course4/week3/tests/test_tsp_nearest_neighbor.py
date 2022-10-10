@@ -1,4 +1,3 @@
-
 import math
 
 from src.course4.week3.tsp_nearest_neighbor import traveling_salesman_problem
@@ -6,7 +5,7 @@ from src.course4.week3.tsp_nearest_neighbor import traveling_salesman_problem
 
 def test_tsp_50_cities():
     points = []
-    with open('src/course4/week3_nn.txt') as handle:
+    with open("src/course4/week3_nn.txt") as handle:
         handle.readline()
         n = 0
         for line in handle:
@@ -22,7 +21,7 @@ def test_tsp_50_cities():
 
 def test_tsp_1000_cities():
     points = []
-    with open('src/course4/week3_nn.txt') as handle:
+    with open("src/course4/week3_nn.txt") as handle:
         handle.readline()
         n = 0
         for line in handle:
@@ -38,7 +37,7 @@ def test_tsp_1000_cities():
 
 def test_tsp_1000_cities_unsorted():
     points = []
-    with open('src/course4/week3_nn_unsorted.txt') as handle:
+    with open("src/course4/week3_nn_unsorted.txt") as handle:
         handle.readline()
         for line in handle:
             index, x, y = line.split()

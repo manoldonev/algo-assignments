@@ -1,4 +1,3 @@
-
 """Dijkstra's Shortest Paths Algorithm (Naive) Package"""
 
 from collections.abc import Mapping

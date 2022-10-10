@@ -1,4 +1,3 @@
-
 """Dijkstra's Shortest Paths Algorithm (heapq) Package"""
 
 from collections.abc import Mapping
@@ -43,6 +42,5 @@ def initialize_heap(graph: Mapping[str, list[tuple[str, int]]], source: str):
     for node in graph[source]:
         dijkstra_score[node[0]] = node[1]
 
-    items = [PrioritizedItem(value, key)
-             for key, value in dijkstra_score.items()]
+    items = [PrioritizedItem(value, key) for key, value in dijkstra_score.items()]
     return PriorityQueue(items)

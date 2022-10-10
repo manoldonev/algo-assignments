@@ -1,4 +1,3 @@
-
 """Shortest Path Package"""
 
 from collections import deque

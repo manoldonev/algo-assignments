@@ -1,4 +1,3 @@
-
 """Test cases for Karatsuba multiplication."""
 
 import pytest

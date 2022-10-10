@@ -1,11 +1,10 @@
-
 """Topological Sort Package"""
 
 from collections import deque
 from collections.abc import Iterable, Mapping
 
 
-class Tracker():
+class Tracker:
     def __init__(self):
         self.explored = set()
         self.sort_order = deque()

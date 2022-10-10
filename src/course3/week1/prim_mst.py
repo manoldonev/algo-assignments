@@ -1,4 +1,3 @@
-
 """Prim's Minimum Spanning Tree Algorithm"""
 
 import sys
@@ -27,7 +26,7 @@ def prim(graph: Mapping[int, list[tuple[int, int]]]):
 
             old_min_cost_edge = min_heap.remove_task(vertex2)
             old_min_cost = old_min_cost_edge[0]
-            if (cost < old_min_cost):
+            if cost < old_min_cost:
                 min_cost_edge = (cost, min_vertex_key, vertex2)
             else:
                 min_cost_edge = old_min_cost_edge
@@ -41,11 +40,11 @@ def prim(graph: Mapping[int, list[tuple[int, int]]]):
 
 def initialize_heap(graph: Mapping[int, list[tuple[int, int]]], source: int):
     costs: dict[int, tuple[int, int, int]] = {
-        key: (sys.maxsize, -1, -1) for key in graph if key != source}
+        key: (sys.maxsize, -1, -1) for key in graph if key != source
+    }
     for vertex2, cost in graph[source]:
         costs[vertex2] = (cost, source, vertex2)
 
-    items = [PrioritizedItem(value, key)
-             for key, value in costs.items()]
+    items = [PrioritizedItem(value, key) for key, value in costs.items()]
 
     return PriorityQueue(items)

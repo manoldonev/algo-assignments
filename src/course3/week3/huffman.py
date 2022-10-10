@@ -1,23 +1,25 @@
-
 import sys
 
 from heapq import heapify, heappop, heappush
 
 
 def make_huffman_tree(symbols):
-    node_list = [HuffmanNode(weight, symbol)
-                 for symbol, weight in symbols.items()]
+    node_list = [HuffmanNode(weight, symbol) for symbol, weight in symbols.items()]
     heapify(node_list)
 
     n = len(symbols)
-    while(n > 1):
+    while n > 1:
         smallest_node = heappop(node_list)
         second_smallest_node = heappop(node_list)
 
-        heappush(node_list,
-                 HuffmanNode(weight=smallest_node.weight + second_smallest_node.weight,
-                             zero=smallest_node,
-                             one=second_smallest_node))
+        heappush(
+            node_list,
+            HuffmanNode(
+                weight=smallest_node.weight + second_smallest_node.weight,
+                zero=smallest_node,
+                one=second_smallest_node,
+            ),
+        )
 
         n -= 1
 
@@ -44,18 +46,18 @@ def get_min_length(encoding):
     return min_length
 
 
-def _flatten_to_dict(tree, codeword='', code_dict=None):
+def _flatten_to_dict(tree, codeword="", code_dict=None):
     if code_dict is None:
         code_dict = {}
 
     if tree.symbol:
-        if codeword == '':
-            codeword = '0'
+        if codeword == "":
+            codeword = "0"
 
         code_dict[tree.symbol] = codeword
     else:
-        _flatten_to_dict(tree.zero, codeword+'0', code_dict)
-        _flatten_to_dict(tree.one, codeword+'1', code_dict)
+        _flatten_to_dict(tree.zero, codeword + "0", code_dict)
+        _flatten_to_dict(tree.one, codeword + "1", code_dict)
 
     return code_dict
 
@@ -71,7 +73,8 @@ class HuffmanNode:
         return self.weight < other.weight
 
     def __repr__(self):
-        return f'{self.symbol}: {self.weight}'
+        return f"{self.symbol}: {self.weight}"
+
 
 # class HuffmanCompression:
 #     def __init__(self, symbol_weights):

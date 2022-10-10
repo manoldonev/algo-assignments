@@ -1,4 +1,3 @@
-
 from collections import defaultdict
 
 from src.course3.week2.union_find import UnionFind

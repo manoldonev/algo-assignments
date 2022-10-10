@@ -5,13 +5,7 @@ from src.course1.week4.mincut import min_cut
 
 
 def test_mincut():
-    graph = {
-        1: [2, 3, 4],
-        2: [1, 4, 5],
-        3: [1, 4],
-        4: [1, 2, 3, 5],
-        5: [2, 4]
-    }
+    graph = {1: [2, 3, 4], 2: [1, 4, 5], 3: [1, 4], 4: [1, 2, 3, 5], 5: [2, 4]}
 
     n = len(graph)
     trials = math.ceil(n * n * math.log(n))

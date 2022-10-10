@@ -6,7 +6,7 @@ from src.course1.week1 import karatsuba
 
 x = 3141592653589793238462643383279502884197169399375105820974944592
 y = 2718281828459045235360287471352662497757247093699959574966967627
-print('{0:d}'.format(karatsuba.multiply(x, y)))
+print("{0:d}".format(karatsuba.multiply(x, y)))
 
 # from src.course1.week2 import count_inversions
 

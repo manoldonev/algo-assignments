@@ -1,4 +1,3 @@
-
 """Karger's Min Cut Algorithm Implementation"""
 
 from random import randint

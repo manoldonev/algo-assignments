@@ -1,4 +1,3 @@
-
 import math
 import random
 
@@ -13,7 +12,7 @@ def papadimitriou(clauses):
         return True
 
     outer_loop_count = int(math.log(n, 2))
-    inner_loop_count = 2 * n ** 2
+    inner_loop_count = 2 * n**2
 
     for i in range(outer_loop_count):
         assignment = _choose_random_variables_assignment(variables)
@@ -25,13 +24,14 @@ def papadimitriou(clauses):
             elif len(unsatisfied_clauses) == 1:
                 # possible loop clause
                 x, y = unsatisfied_clauses[0]
-                if ((-x, -y) in clauses or (-y, -x) in clauses) and \
-                    ((-x, y) in clauses or (y, -x) in clauses) and \
-                        ((x, -y) in clauses or (-y, x) in clauses):
+                if (
+                    ((-x, -y) in clauses or (-y, -x) in clauses)
+                    and ((-x, y) in clauses or (y, -x) in clauses)
+                    and ((x, -y) in clauses or (-y, x) in clauses)
+                ):
                     return False  # unsatisfiable set of clauses (loop)
 
-            random_variable = _pick_random_variable_to_flip(
-                unsatisfied_clauses)
+            random_variable = _pick_random_variable_to_flip(unsatisfied_clauses)
             assignment[random_variable] = not assignment[random_variable]
             assignment[-random_variable] = not assignment[random_variable]
 
@@ -51,7 +51,8 @@ def reduce_clauses(clauses):
     while True:
         remaining_variables = set(chain(*reduced_clauses))
         variables_to_reduce = [
-            x for x in remaining_variables if -x not in remaining_variables]
+            x for x in remaining_variables if -x not in remaining_variables
+        ]
 
         if variables_to_reduce == []:
             break

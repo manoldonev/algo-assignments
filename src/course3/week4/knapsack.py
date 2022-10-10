@@ -1,4 +1,3 @@
-
 def knapsack(items, knapsack_size):
     n = len(items)
 
@@ -8,12 +7,12 @@ def knapsack(items, knapsack_size):
         item_value, item_weight = items[i - 1]
 
         for c in range(knapsack_size + 1):
-            if (item_weight > c):
+            if item_weight > c:
                 memo[i][c] = memo[i - 1][c]
             else:
                 memo[i][c] = max(
-                    memo[i - 1][c],
-                    memo[i - 1][c - item_weight] + item_value)
+                    memo[i - 1][c], memo[i - 1][c - item_weight] + item_value
+                )
 
     return memo[n][knapsack_size]
 
@@ -29,17 +28,19 @@ def knapsack_recursive(items, knapsack_size, n=None, memo=None):
         memo = {}
 
     item_value, item_weight = items[n - 1]
-    item_key = f'{n - 1}_{knapsack_size}'
+    item_key = f"{n - 1}_{knapsack_size}"
 
-    if (item_key in memo):
+    if item_key in memo:
         return memo[item_key]
 
-    if (item_weight > knapsack_size):
+    if item_weight > knapsack_size:
         intermediate = knapsack_recursive(items, knapsack_size, n - 1, memo)
     else:
         intermediate = max(
             knapsack_recursive(items, knapsack_size, n - 1, memo),
-            knapsack_recursive(items, knapsack_size - item_weight, n - 1, memo) + item_value)
+            knapsack_recursive(items, knapsack_size - item_weight, n - 1, memo)
+            + item_value,
+        )
 
     memo[item_key] = intermediate
 

@@ -1,10 +1,11 @@
-
 import sys
 
 from collections import defaultdict
 
 
-def compute_single_source_shortest_paths(graph, source, reconstruct_shortest_paths=False):
+def compute_single_source_shortest_paths(
+    graph, source, reconstruct_shortest_paths=False
+):
     # vertex indexing in 'graph' is 1-based but subproblem implementation is 0-based
     n = len(graph)
 
@@ -24,8 +25,10 @@ def compute_single_source_shortest_paths(graph, source, reconstruct_shortest_pat
             case1 = subproblems[i - 1][v]
 
             if in_degree_neighbors[v + 1]:
-                case2 = min(subproblems[i - 1][tail - 1] + edge_weight for tail,
-                            edge_weight in in_degree_neighbors[v + 1])
+                case2 = min(
+                    subproblems[i - 1][tail - 1] + edge_weight
+                    for tail, edge_weight in in_degree_neighbors[v + 1]
+                )
                 subproblems[i][v] = min(case1, case2)
             else:
                 subproblems[i][v] = case1
@@ -34,13 +37,13 @@ def compute_single_source_shortest_paths(graph, source, reconstruct_shortest_pat
                 stable = False
 
         if stable:
-            shortest_lengths = {
-                v + 1: subproblems[i - 1][v] for v in range(0, n)}
+            shortest_lengths = {v + 1: subproblems[i - 1][v] for v in range(0, n)}
 
             shortest_paths = None
             if reconstruct_shortest_paths:
                 shortest_paths = _reconstruct_shortest_paths(
-                    graph, source, in_degree_neighbors, shortest_lengths)
+                    graph, source, in_degree_neighbors, shortest_lengths
+                )
 
             return shortest_lengths, shortest_paths
 
